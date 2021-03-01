@@ -1,0 +1,57 @@
+{% trans_default_domain 'emails' %}
+
+{% apply inky_to_html|inline_css(encore_entry_css_source('email')) %}
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+    <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+      <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>{% block subject %}{{ email.subject }}{% endblock %}</title>
+        <!-- <style> -->
+      </head>
+      <body>
+            <table class="body">
+              <tr>
+                <td class="center" align="center" valign="top">
+                  <center>
+                    <container>
+                          <row>
+                            <columns class="header">
+                                <spacer size="40" class="header-spacer"></spacer>
+
+                                <center>
+                                    <img src="{{ email.image('@images/email/logo.png') }}" class="logo">
+                                </center>
+
+                                <spacer size="20" class="header-spacer"></spacer>
+                            </columns>
+                          </row>
+
+                          <row>
+                            <columns class="content-wrapper">
+                                {% block content %}{% endblock %}
+                            </columns>
+                          </row>
+
+                          <row>
+                                <columns class="footer">
+                                    <center>
+                                        <p><small>{{ 'email_footer' | trans({}, 'emails', requestLocale) | raw }}</small></p>
+                                  </center>
+
+                                </columns>
+                          </row>
+
+                          <spacer size="40" class="header-spacer"></spacer>
+                        </container>
+                  </center>
+                </td>
+              </tr>
+            </table>
+            <!-- prevent Gmail on iOS font size manipulation -->
+           <div style="display:none; white-space:nowrap; font:15px courier; line-height:0;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </div>
+
+      </body>
+    </html>
+{% endapply %}

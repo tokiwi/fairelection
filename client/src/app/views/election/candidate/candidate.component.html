@@ -1,0 +1,136 @@
+<app-stepper [activeSteps]="[1, 2, 3]" [election]="election" class="d-none d-lg-block"></app-stepper>
+
+<div class="container">
+  <div class="row">
+
+    <div class="col-sm-12 col-lg-8 main mb-6">
+      <h4 class="mb-0">{{ election.name }}</h4>
+      <h1>{{ 'component.candidates.title1' | translate }}</h1>
+      <p>{{ 'component.candidates.p1' | translate }}</p>
+
+      <p>
+        <button mat-button class="btn btn-bordered loading-green" (click)="openImportModal()">
+            <i class="icon-general excel"></i> {{ 'action.import_from_excel' | translate }}
+        </button>
+      </p>
+
+<!--      <p>{{ 'component.candidates.p1' | translate }}</p>-->
+
+      <div *ngIf="true === (loading$ | async)">
+        <mat-spinner color="accent" diameter="30"></mat-spinner>
+      </div>
+
+      <form [formGroup]="form">
+        <ng-container *ngIf="false === (loading$ | async)">
+          <div class="table-responsive">
+
+            <drag-scroll class="criterias-slider" style="height: 100%;">
+              <table role="grid" class="w-100">
+                <thead>
+                <tr>
+                  <th class="table-header-candidate pr-3 align-bottom" colspan="3">{{ 'title.name_or_candidate_number' | translate }}</th>
+                  <ng-container formArrayName="candidates">
+                    <ng-container *ngFor="let candidate of form.get('candidates')['controls']; let i = index;" [formGroupName]="i">
+                      <ng-container formArrayName="electionCriterias" *ngIf="i === 0">
+                        <ng-container *ngFor="let electionCriteria of candidate.get('electionCriterias')['controls']; let j = index;" [formGroupName]="j">
+                          <th class="table-header-criteria pr-3">
+
+                            <div class="criteria">
+                              <i class="icon-criteria {{ electionCriteria.get('pictogram').value }}"></i>
+                              {{ electionCriteria.get('name').value }}
+                            </div>
+
+                            <table class="table-fixed">
+                              <tr>
+                                <td class="radio-header-cell" *ngFor="let choiceControl of electionCriteria.get('choices')['controls']; let k = index;" [matTooltip]="choiceControl.get('name').value" matTooltipPosition="above">
+                                  {{ choiceControl.get('acronym').value }}
+                                </td>
+                              </tr>
+                            </table>
+
+                          </th>
+                        </ng-container>
+                      </ng-container>
+                    </ng-container>
+                  </ng-container>
+                </tr>
+                </thead>
+                <tbody>
+                <ng-container formArrayName="candidates">
+                  <tr class="row-candidate" *ngFor="let candidate of form.get('candidates')['controls']; let i = index;" [formGroupName]="i">
+                    <td class="cell-candidate-number">{{ i + 1 }}</td>
+                    <td class="cell-candidate-action">
+                      <button class="btn-color-grey"
+                              tabindex="-1"
+                              mat-icon-button
+                              type="button"
+                              (click)="removeCandidateRow(i)">
+                        <mat-icon class="mat-icon-color-grey">delete_outline</mat-icon>
+                      </button>
+                    </td>
+                    <td class="pr-5">
+                      <mat-form-field appearance="outline">
+                        <mat-label>{{ 'word.candidate_name' | translate }}</mat-label>
+                        <input matInput formControlName="name" autocomplete="false">
+                      </mat-form-field>
+                    </td>
+
+                    <ng-container formArrayName="electionCriterias">
+                      <ng-container *ngFor="let electionCriteria of candidate.get('electionCriterias')['controls']; let j = index;" [formGroupName]="j">
+                        <td class="pr-3">
+                          <table class="table-fixed text-center">
+                            <tr>
+                              <mat-radio-group formControlName="selectedValue">
+                                <td class="radio-cell" *ngFor="let choiceControl of electionCriteria.get('choices')['controls']; let k = index;">
+                                  <mat-radio-button [value]="choiceControl.get('@id').value" [class.invalid]="electionCriteria.get('selectedValue').touched && electionCriteria.get('selectedValue').invalid"><!--{{ choiceControl.get('name').value }}--></mat-radio-button>
+                                </td>
+                              </mat-radio-group>
+                            </tr>
+                          </table>
+                        </td>
+                      </ng-container>
+                    </ng-container>
+                  </tr>
+                </ng-container>
+                </tbody>
+
+                <tfoot>
+                <tr>
+                  <td></td>
+                  <td>
+                    <button mat-icon-button type="button" color="accent" class="add-candidate" (click)="addCandidateRow()" [attr.data-title]="'action.add_candidate' | translate">
+                      <mat-icon>add_circle_outline</mat-icon>
+                    </button>
+                  </td>
+                </tr>
+                </tfoot>
+              </table>
+            </drag-scroll>
+          </div>
+
+          <div class="mt-3" *ngIf="form.get('candidates').hasError('count')">
+            <mat-error>{{ 'validator.count_min_candidate' | translate:{count: form.get('candidates').errors.count.min} }}</mat-error>
+          </div>
+        </ng-container>
+
+        <div id="form-actions" class="text-right">
+          <button mat-button class="btn btn-bordered" [routerLink]="election['@id'] + '/assignments'">
+            {{ 'action.previous_step' | translate }}
+          </button>
+
+          <button mat-button color="primary" class="btn btn-filled" (click)="save()" [disabled]="form.get('candidates').hasError('count')" appMatButtonLoading [loading]="loading">
+            {{ 'action.next_step' | translate }}
+          </button>
+        </div>
+      </form>
+    </div>
+    <div class="col-md-12 col-lg-4">
+      <app-help-panel [election]="election">
+        <h3>{{ 'component.candidates.help.title1' | translate }}</h3>
+        <p [innerHTML]="'component.candidates.help.p2' | translate"></p>
+
+        <img src="/assets/images/election/candidates.svg" class="img-fluid" alt="{{ 'component.candidates.title1' | translate }}" />
+      </app-help-panel>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+<div class="container">
+  <h1>{{ 'component.elections.title1' | translate }}</h1>
+
+  <div class="no-election" *ngIf="0 === (elections$ | async).length">
+    <p>{{ 'component.elections.no_election' | translate }}</p>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-6 col-md-4 col-xl-3 mb-3" *ngFor="let election of elections$ | async">
+      <mat-card class="example-card" >
+        <mat-card-header>
+          <mat-card-title>{{ election.name }}</mat-card-title>
+          <mat-card-subtitle>{{ election.createdAt | date:'mediumDate' }}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p>{{ election.description }}</p>
+
+          <div class="criterias">
+            <div class="criteria" *ngFor="let electionCriteria of election.electionCriterias" [matTooltip]="electionCriteria.criteria.name">
+              <i class="icon-criteria {{ electionCriteria.criteria.pictogram }}"></i>
+            </div>
+          </div>
+        </mat-card-content>
+        <mat-card-actions align="end">
+          <button mat-button color="warn" class="btn btn-warning btn-xs" appConfirmDialog (confirmClick)="delete(election)">{{ 'action.delete' | translate }}</button>
+          <button mat-button color="primary" class="btn btn-bordered btn-xs" [routerLink]="election['@id'] + '/criterias'" *ngIf="!election.hasResults">{{ 'action.end_election' | translate }}</button>
+          <button mat-button color="accent" class="btn btn-filled btn-xs" [routerLink]="election['@id'] + '/results'" *ngIf="election.hasResults">{{ 'action.see_results' | translate }}</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+
+  <div class="d-flex justify-content-end">
+    <div>
+      <mat-paginator [length]="dataSource.totalItems"
+                     [pageSize]="dataSource.itemsPerPage"
+                     hidePageSize
+      >
+      </mat-paginator>
+    </div>
+    <div>
+      <button mat-button class="btn btn-filled" routerLink="/elections/create">{{ 'action.add_election' | translate }}</button>
+    </div>
+  </div>
+</div>

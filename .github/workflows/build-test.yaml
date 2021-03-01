@@ -1,0 +1,55 @@
+name: Build
+
+on: [push, pull_request]
+
+jobs:
+  build_test:
+    name: Build, coding style & tests
+    runs-on: ${{ matrix.operating-system }}
+    strategy:
+      fail-fast: false
+      matrix:
+        operating-system: [ ubuntu-latest ]
+        php-versions: [ '7.4' ]
+        node-version: [ '14.7' ]
+    defaults:
+      run:
+        working-directory: ./backend
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup PHP, with composer and extensions
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php-versions }}
+          extensions: mbstring, xml, ctype, iconv, intl
+          coverage: xdebug
+          tools: symfony
+
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Build assets
+        run: yarn install && yarn build
+
+      - name: Install dependencies
+        run: composer self-update --preview && composer install --prefer-dist --no-interaction --no-ansi --no-progress --no-suggest
+
+      - name: Install phpunit # needed for phpstan
+        run: php bin/phpunit install
+
+      - name: Code quality
+        run: php vendor/bin/rector process src --dry-run && php vendor/bin/php-cs-fixer fix --dry-run --using-cache=no --verbose --diff && php vendor/bin/phpstan analyse -l 8 -c phpstan.neon src tests
+
+      - name: Start services
+        run: docker-compose up -d && sleep 10
+
+      - name: Prepare database
+        run: symfony console doctrine:migrations:migrate -n
+#        run: symfony console doctrine:migrations:migrate -n && symfony console doctrine:fixtures:load -n
+
+      - name: PHPUnit
+        run: symfony run vendor/bin/simple-phpunit

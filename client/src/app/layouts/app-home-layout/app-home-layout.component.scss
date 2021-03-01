@@ -1,0 +1,31 @@
+.content {
+  background: #fff;
+}
+
+.mat-drawer-content {
+  .mat-toolbar {
+    z-index: 8;
+    height: 273px;
+    padding-bottom: 148px;
+    background: transparent;
+  }
+}
+
+.mat-drawer-container {
+  background: #fff;
+
+  &::before {
+    position: absolute;
+    top: -411px;
+    left: -117px;
+    width: 713px;
+    height: 678px;
+    background-image: url("/assets/images/home/home_1.svg");
+    background-repeat: no-repeat;
+    content: "";
+  }
+}
+
+.sidenav-content-inner {
+  padding: 120px 0 120px 0;
+}

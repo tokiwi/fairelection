@@ -1,0 +1,76 @@
+@startuml
+
+class Election {
+    int: id
+    Ulid: ulid
+    string: name
+    string: description
+    int: numberOfPeopleToElect
+    ElectionCriteria[]: criterias
+    Candidate[]: candidates
+}
+
+class Result {
+    int: id
+    Ulid: ulid
+    Candidate: candidate
+    Election: election
+}
+
+class Criteria {
+    int: id
+    string: name
+    string: pictogram
+    CriteriaItem[]: items
+    ?User: user
+}
+
+class CriteriaItem {
+    int: id
+    string: name
+    string: acronym
+}
+
+class ElectionCriteria {
+    int: id
+    Election: election
+    Criteria: criteria
+    Assignment[]: assignments
+}
+
+class Assignment {
+    int: id
+    int: percent
+    ElectionCriteria: criteria
+    CriteriaItem: item
+}
+
+class Candidate {
+    int: id
+    Ulid: ulid
+    string: name
+'    ElectionCriteria: electionCriteria
+    Assignment: assignment
+}
+
+class User {
+    int: id
+    Ulid: ulid
+    string: name
+    Election[]: elections
+}
+
+Election --> ElectionCriteria
+Election --> Candidate
+Election <-- Result
+Candidate --> Result
+Criteria --> ElectionCriteria
+Criteria --> CriteriaItem
+ElectionCriteria --> Assignment
+CriteriaItem --> Assignment
+Candidate --> Assignment
+'ElectionCriteria --> Candidate
+User --> Election
+User --> Criteria
+
+@enduml

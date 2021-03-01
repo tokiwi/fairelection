@@ -1,0 +1,270 @@
+{
+  "action": {
+    "add_candidate": "Ajouter candidat-e",
+    "add_category": "Ajouter une catégorie",
+    "add_criteria": "Ajouter critère personnalisé",
+    "add_election": "Ajouter une élection",
+    "back": "Retour",
+    "cancel": "Annuler",
+    "create_election": "Créer une élection",
+    "delete": "Supprimer",
+    "download_model": "Modèle FairElection",
+    "end_election": "Poursuivre l'élection",
+    "import_from_excel": "Importer une liste depuis Excel",
+    "import_model": "Importer le modèle",
+    "login": "Connexion",
+    "logout": "Déconnexion",
+    "modify_candidates": "Modifier les candidat-es",
+    "modify_criterias": "Modifier les critères",
+    "next_step": "Étape suivante",
+    "previous_step": "Étape précédente",
+    "recover": "Récupérer",
+    "reduce_criteria": "Réduire les critères",
+    "register": "S'inscrire",
+    "save": "Enregistrer",
+    "see_results": "Résultats",
+    "see_simulation": "Voir la simulation",
+    "start": "Démarrez",
+    "try_fair_election": "Essayez FairElection"
+  },
+  "component": {
+    "add_criteria_dialog": {
+      "p1": "Entrez ci-dessous les catégories possibles de ce critère. Chaque personne candidate devra pouvoir n'entrer que dans une et une seule catégorie. Par ex. avec un critère de sexe, il est possible de prévoir les catégories 'homme', 'femme' et 'autre'."
+    },
+    "candidates": {
+      "help.p1": "- Soit vous inscrivez directement les candidat-es ci-dessous<br />- Soit vous créez la liste des candidatures avec Excel.<br />Pour ce faire, téléchargez la feuille Excel FairElection qui comporte la structure adéquate. Ne modifiez pas la structure de ce fichier, qui sera utilisé dans les prochaines étapes.",
+      "help.p2": "Si vous utilisez l'option de la feuille Excel, veillez à bien respecter la structure proposée. Vous avez la possibilité de remplir la liste de manière anonyme, par ex. en utilisant des pseudonymes ou des numéros pour les candidat-es.",
+      "help.title1": "Entrez la liste des candidat-es.",
+      "p1": "Dans cette deuxième étape, vous pouvez remplir la liste de vos candidat-es ci-dessous ou les importer depuis le modèle Excel.",
+      "title1": "Vos candidat-es"
+    },
+    "choose_criteria": {
+      "help.p1": "Prenez garde à choisir des critères clairs et transparents.<br /><br />Les critères doivent être clairs : chaque candidat-e doit correspondre à une et une seule catégorie possible. Aucun candidat ne doit être dans deux catégories en même temps.<br /><br />Les critères doivent être transparents : l’information doit pouvoir être vérifiée.<br /><br />Exemple: si vous choisissez le critère de revenus, il faudra pouvoir classer les candidat-es selon ce critère. Chaque candidat-e devra être dans une et une seule catégorie de revenus (critère clair). Les candidat-es devront communiquer en toute transparence leurs revenus (critère transparent).",
+      "help.title1": "Comment choisir les critères ?",
+      "p1": "Les candidat-es doivent représenter la diversité de votre organisation. Quels sont vos objectifs en matière de représentation ? Dans cette première étape, choisissez parmi les critères prédéfinis ou proposez un nouveau critère. Ce critère s'appliquera ensuite à votre processus de sélection.",
+      "title1": "Choisir les critères"
+    },
+    "create_election": {
+      "p1": "<strong>Fixez vos objectifs</strong> sous forme de critères de représentation.",
+      "p2": "<strong>Entrez vos candidat-es</strong> et évaluez à quel point ces candidatures respectent vos objectifs.",
+      "p3": "<strong>Appliquez les critères</strong> choisis grâce à l'algorithme FairElection.",
+      "title1": "Créer une élection"
+    },
+    "criteria_assignment": {
+      "help.p1": "1. Définissez d’abord le nombre total de personnes à élire. Si vous organisez une primaire pour composer une liste électorale, notez le nombre de places disponibles sur la liste.",
+      "help.p2": "2. Ensuite, pour chaque critère, définissez les catégories possibles pour lesquelles vous voulez garantir des places.",
+      "help.p3": "3. Choisissez combien de places réserver pour chaque catégorie. Il s’agit de valeurs plancher, c’est-à-dire des valeurs minimums que la liste devra respecter. Si vous mettez un plancher bas, vous aurez plus de flexibilité au moment d’appliquer ces critères.",
+      "help.title1": "Dans cette étape, vous devez définir plus précisément vos critères.",
+      "p1": "Vous pouvez définir vos catégories pour chaque critère.",
+      "p2": "Vous pouvez définir le nombre de places réservées au minimum.",
+      "title1": "Définir les critères",
+      "title2": "Définissez le nombre de personnes à élire",
+      "title3": "Définissez précisément vos critères"
+    },
+    "elections": {
+      "no_election": "Vous n'avez pas encore créé d'élection pour le moment.",
+      "title1": "Mes élections"
+    },
+    "faq": {
+      "p1": "L’algorithme développé par l’EPFL est basé sur la programmation linéaire. Cette approche va permettre de déterminer la liste gagnante, celle qui respecte à la fois les critères présélectionnés et les résultats bruts de l’élection. En guise d’analogie, imaginons que chaque liste possible dans notre problème soit un point sur une carte en relief. La solution optimale que l’algorithme recherche, c’est le point le plus haut en altitude. Grâce à la programmation linéaire, plutôt que d’explorer chaque point individuellement (ce qui prendrait trop de temps), nous allons prendre du recul, voir quelle est la géométrie globale de notre espace de possibilités, s’en servir pour marquer les zones les plus hautes et explorer seulement celles-là. De cette manière, en quelques essais, nous allons trouver le point le plus haut. L’avantage crucial de cette méthode, c’est qu’elle garantit mathématiquement que la solution trouvée est effectivement la meilleure. Une vulgarisation de l’algorithme de l’EPFL, utilisé dans le cadre de la primaire du mouvement \",Appel Citoyen\", est <a href=\"https://appelcitoyen.ch/zoom-sur-lalgorithme-de-la-primaire-digitale-2\">disponible ici</a>.",
+      "p2": "L’outil FairElection peut être utilisé de manière entièrement anonymisée. Il suffit de remplacer les noms des candidat-es par des numéros. De manière générale, aucune donnée n’est transmise à des tiers.",
+      "p3": "FairElection n’est pas un outil d’e-voting. Il est compatible avec différents modes d’élection (numérique ou en présentiel). Il peut même être utilisé sans vote interne, sur la base d'une appréciation de la force électorale de chaque candidat-e.",
+      "title0": "FAQ",
+      "title1": "Algorithme FairElection",
+      "title2": "Les données personnelles des candidat-es sont-elles transmises à d’autres ?",
+      "title3": "Comment FairElection résout-il les problèmes d’e-voting ?"
+    },
+    "home": {
+      "p1": "Une élection sert à choisir des personnes pour vous représenter. Mais comment sélectionner ces personnes ?",
+      "p10": "Aucun logiciel à installer, utilisation directement possible sur ce site internet",
+      "p11": "Un algorithme développé avec une équipe de chercheurs de l'EPFL",
+      "p12": "Un outil respectueux de vos données et sans risque",
+      "p13": "Une innovation politique suisse pour améliorer notre démocratie",
+      "p14": "Vous voulez comprendre comment fonctionne FairElection ? Parcourez notre simulation : qu'aurait donné l'élection au Conseil National 2019 si elle avait été organisée avec FairElection ?",
+      "p2": "Notre outil FairElection vous accompagne dans ce processus. Cette innovation développée en Suisse vous aidera à organiser votre élection et à sélectionner les candidat-es les plus adéquat-es.",
+      "p3": "Vous souhaitez organiser une élection interne à votre organisation: la primaire d’un parti politique, la composition d’une liste électorale, l’élection d’un comité ou d’un conseil d’administration ? Vous voulez que les personnes retenues représentent la diversité de votre organisation ?",
+      "p4": "L’outil FairElection vous accompagne dans cette démarche. D’abord, il vous aide à clarifier ce que signifie cette “représentation”. Quels sont les critères de représentation les plus importants pour vous? Il vous offre ensuite un instrument pour organiser l’élection en garantissant le respect des critères choisis. FairElection est compatible avec des processus d’élection numériques ou analogiques.",
+      "p5": "Sous forme de critères de représentation",
+      "p6": "Et évaluez à quel point ces candidatures respectent vos objectifs ",
+      "p7": "Grâce à l’algorithme FairElection",
+      "p8": "Un outil pour assurer des listes représentatives, en adéquation avec vos membres",
+      "p9": "Une approche inédite des élections pour encourager de nouvelles candidatures",
+      "title1": "Créateur de diversité",
+      "title10": "Algorithme efficace",
+      "title11": "Confidentialité et sécurité",
+      "title12": "Innovation suisse",
+      "title13": "Simulation scénario",
+      "title14": "Partenaires",
+      "title15": "Êtes-vous prêt à créer une liste plus représentative ?",
+      "title2": "Comment ça marche ?",
+      "title3": "Fixez vos objectifs",
+      "title4": "Entrez vos candidat-es",
+      "title5": "Appliquez les critères choisis",
+      "title6": "Vos avantages",
+      "title7": "Transparence et légitimité",
+      "title8": "Stimuler des vocations",
+      "title9": "Utilisation simple et intuitive"
+    },
+    "import_candidate_dialog": {
+      "p1": "1. Téléchargez le modèle Excel en cliquant sur le bouton ci-dessous.",
+      "p2": "2. Complétez ce modèle sur votre ordinateur, puis cliquez sur le bouton « importer le modèle » pour ajouter vos candidat-es. Veillez à bien respecter la structure du document.",
+      "p3": "La liste importée depuis Excel remplacera les candidatures déjà saisies sur cette page.",
+      "title1": "Importer depuis un modèle Excel"
+    },
+    "import_vote_dialog": {
+      "p1": "1. Téléchargez le modèle Excel en cliquant sur le bouton ci-dessous.",
+      "p2": "2. Complétez le, puis cliquez sur le bouton « importer le modèle » pour ajouter le nombre de votes.",
+      "p3": "La liste importée depuis Excel remplacera les votes déjà saisis sur cette page.",
+      "title1": "Importer depuis un modèle Excel"
+    },
+    "login": {
+      "title1": "Connexion"
+    },
+    "login_dialog": {
+      "no_account_yet": "Vous n'avez pas de compte ?"
+    },
+    "register": {
+      "title1": "Inscription"
+    },
+    "reset_password": {
+      "title1": "Nouveau mot de passe"
+    },
+    "reset_password_request": {
+      "title1": "Demande de récupération"
+    },
+    "results": {
+      "help.p1": "Vous trouverez ici la liste des candidat-es choisi-es. Elle respecte à la fois les critères choisis et le résultat de l’élection que vous avez organisée.",
+      "help.p2": "Les candidat-es non-choisi-es apparaissent en gris clair.  ",
+      "help.title1": "Résultats",
+      "p1": "Félicitations, cette élection est terminée. Vous pouvez la rejouer en modifiant les critères. Si l'utilisation de FairElection vous a plu, parlez-en autour de vous. Nous serions ravi-es d'entendre votre avis et vos propositions pour améliorer notre service. N'hésitez pas à <a href=\"mailto:info@fairelection.ch\">nous écrire</a> !",
+      "title1": "Mission accomplie !",
+      "title2": "Résultats de l'élection",
+      "title3": "Statistiques des résultats de l'élection"
+    },
+    "solve": {
+      "p1": "L'algorithme FairElection applique les critères que vous avez sélectionné à la liste de résultats bruts. Il vous fournira très rapidement la liste gagnante. Cet algorithme a été développé par une équipe de chercheurs de l'EPFL.",
+      "p2": "Il n'y a pas de résultat possible pour ce groupe de candidat·e·s et les critères sélectionnés. Réduisez le nombre de critères afin de trouver une solution.",
+      "title1": "Création de votre liste",
+      "title2": "Impossible d'établir un résultat"
+    },
+    "statistics": {
+      "help.p1": "Quelques pistes pour améliorer votre liste de candidatures ? \nAfin de garantir un véritable choix et d’éviter que certaines personnes ne soient choisies de manière tacite, vous pouvez tenter d’améliorer la diversité de votre liste de candidatures. Cherchez à augmenter le nombre de candidat-es dans les catégories les moins représentées.",
+      "help.p2": " Expliquez la démarche entreprise avec FairElection et votre volonté d’élire des personnes représentatives et diverses, sur la base de critères explicites. L’expérience montre que les candidat-es se sentent pris au sérieux et sont plus motivé-es à tenter leur chance.",
+      "help.title1": "Statistiques",
+      "p1": "Voici une analyse de votre pool de candidat-es. Vous pouvez d'ores et déjà contrôler que le pool actuel de candidat-es vous permette d'atteindre vos objectifs de représentation.",
+      "p2": "Il n'y a pas de résultat possible pour cette combinaison de candidatures et de critères. Veuillez revoir vos critères à la baisse ou augmenter le nombre de personnes à élire",
+      "title1": "Statistiques et résumé de vos candidat-es"
+    },
+    "votes": {
+      "help.p1": "FairElection est compatible avec tous les modes d’élection&#8239;: en ligne ou en présentiel, élection ouverte à l'ensemble des membres de votre organisation, élection par le comité, décision de l'assemblée générale.",
+      "help.p2": "Si vous ne pouvez pas ou ne souhaitez pas organiser d’élection, vous pouvez entrer un chiffre entre 1 et 10 pour chacun-e des candidat-es. Ce chiffre correspond à votre estimation de la force électorale des différent-es candidat-es.",
+      "help.title1": "Organiser votre élection",
+      "p1": "Pour cette étape, vous pouvez organiser une votation interne, selon la méthode qui vous convient. Demandez à vos membres/sympathisant-es/comité de choisir leurs candidat-es favori-es. L'outil FairElection va utiliser le résultat de ce vote et lui appliquer les critères choisis. Veuillez entrer ci-dessous le nombre de voix reçues par chaque candidat-e.",
+      "title1": "Attribution des votes"
+    }
+  },
+  "criteria": {
+    "age": "Âge",
+    "commitment": "Engagement",
+    "gender": "Sexe",
+    "income": "Revenu",
+    "region": "Région",
+    "work": "Travail"
+  },
+  "dialog": {
+    "confirm_dialog": {
+      "cancel": "Non",
+      "confirm": "Oui",
+      "content": "Voulez-vous vraiment effectuer cette action ?",
+      "title": "Confirmation"
+    },
+    "leave_dirty_form": {
+      "cancel": "Enregistrer",
+      "confirm": "Continuer sans enregistrer",
+      "content": "Vous avez des données en cours de modification.<br /><br />Afin de ne <strong>pas perdre vos données</strong>, veuillez cliquer sur le bouton <strong>enregistrer</strong>, puis passez à l'étape précédente.",
+      "title": "Enregistrez vos modifications"
+    },
+    "upload_model": {
+      "content": "Cette action effacera tous vos candidat-es déjà importé-es"
+    }
+  },
+  "hint": {
+    "criteria_name": "Exemple : Sexe",
+    "man": "Exemple : Homme",
+    "man_acronym": "Exemple : H",
+    "max_allowed_chars": "Maximum {{ max }} caractères"
+  },
+  "menu": {
+    "faq": "FAQ",
+    "login": "Connexion",
+    "my_elections": "Mes élections",
+    "new_election": "Nouvelle élection",
+    "register": "Inscription"
+  },
+  "message": {
+    "conditions_are_not_met": "Les conditions ne sont pas toutes respectées pour ce critère.",
+    "forgot_your_password": "Mot de passe oublié ?"
+  },
+  "title": {
+    "add_criteria": "Ajouter un critère",
+    "at_least_n_people": "Au moins <strong>{{ number }}</strong> personne(s), <strong>{{ acronym }}</strong>",
+    "fair_election": "FairElection",
+    "help": "Aide",
+    "login": "Connexion",
+    "name_or_candidate_number": "Nom ou numéro des candidat-es",
+    "register": "Inscription"
+  },
+  "toast": {
+    "candidates_successfully_imported": "Candidat-es importé-es avec succès.",
+    "criteria_created": "Critère créé avec succès.",
+    "criteria_edited": "Critère édité avec succè.",
+    "election_deleted": "Élection supprimée avec succès.",
+    "reset_password_request_success": "Demande de réinitialisation de mot de passe soumise avec succès.",
+    "reset_password_success": "Mot de passe modifié avec succès.",
+    "user_account_created": "Compte créé avec succès.",
+    "votes_successfully_imported": "Votes importés avec succès.",
+    "welcome_home": "Bienvenue !",
+    "wrong_username_or_password": "Mot de passe ou nom d'utilisateur incorrect."
+  },
+  "validator": {
+    "count_min": "Veuillez sélectionner au minimum {{ count }} élément.",
+    "count_min_candidate": "Veuillez entrer au minimum {{ count }} candidats.",
+    "field.email": "Veuillez entrer un email valide.",
+    "field.required": "Ce champ est requis.",
+    "field.too_long": "Le nombre maximal de caractères autorisé est de {{ max }}.",
+    "field.too_short": "Le nombre minimal de caractères requis est de {{ min }}."
+  },
+  "word": {
+    "acronym": "Abréviation",
+    "address": "Adresse",
+    "candidate_name": "Nom ou n° du ou de la candidat-e",
+    "candidate_percent": "% de candidat-es",
+    "category": "Catégorie",
+    "category_name": "Nom de la catégorie",
+    "contact": "Contact",
+    "criteria": "Critère",
+    "criteria_name": "Nom du critère",
+    "de": "Deutsch",
+    "description": "Description",
+    "elected": "Élu-e ?",
+    "election_name": "Nom de l'élection",
+    "email": "Email",
+    "fr": "Français",
+    "full_name": "Nom complet",
+    "insufficient": "Insuffisant",
+    "it": "Italiano",
+    "many_person": "Personnes",
+    "minimum_criterion": "Critère minimum",
+    "name": "Nom",
+    "nobody": "personne",
+    "number": "Nombre",
+    "number_of_people_to_elect": "Nombre de personnes à élire",
+    "one_person": "personne",
+    "password": "Mot de passe",
+    "pictogram": "Pictogramme",
+    "sufficient": "Suffisant",
+    "total": "Total",
+    "votes": "Votes",
+    "you_have": "Vous avez"
+  }
+}

@@ -1,0 +1,65 @@
+<app-stepper [activeSteps]="[1, 2, 3, 4, 5]" [election]="election" class="d-none d-lg-block"></app-stepper>
+
+<div class="container">
+  <div class="row">
+
+    <div class="col-sm-12 col-lg-8 main mb-6">
+      <h4 class="mb-0">{{ election.name }}</h4>
+      <h1>{{ 'component.votes.title1' | translate }}</h1>
+      <p>{{ 'component.votes.p1' | translate }}</p>
+
+      <p>
+        <button mat-button class="btn btn-bordered loading-green" (click)="openImportModal()">
+          <i class="icon-general excel"></i> {{ 'action.import_from_excel' | translate }}
+        </button>
+      </p>
+
+      <form [formGroup]="form">
+
+        <div class="table-responsive">
+          <table role="grid">
+            <thead>
+            <tr>
+              <th class="table-header-candidate" colspan="2">{{ 'title.name_or_candidate_number' | translate }}</th>
+              <th class="table-header-votes">{{ 'word.votes' | translate }}</th>
+            </tr>
+            </thead>
+            <tbody>
+            <ng-container formArrayName="candidates">
+              <tr class="row-candidate" *ngFor="let candidate of form.get('candidates')['controls']; let i = index;" [formGroupName]="i">
+                <td class="cell-candidate-number">{{ i + 1 }}</td>
+                <td>{{ candidate.get('name').value }}</td>
+                <td class="table-cell-votes">
+                  <mat-form-field appearance="outline">
+                    <mat-label>{{ 'word.votes' | translate }}</mat-label>
+                    <input matInput type="number" formControlName="numberOfVotes" autocomplete="off" min="0">
+                  </mat-form-field>
+                </td>
+              </tr>
+            </ng-container>
+            </tbody>
+          </table>
+        </div>
+
+        <div id="form-actions" class="text-right">
+          <button mat-button class="btn btn-bordered" [routerLink]="election['@id'] + '/statistics'">
+            {{ 'action.previous_step' | translate }}
+          </button>
+
+          <button mat-button color="primary" class="btn btn-filled" (click)="save()" appMatButtonLoading="" [loading]="loading">
+            {{ 'action.next_step' | translate }}
+          </button>
+        </div>
+      </form>
+    </div>
+    <div class="col-md-12 col-lg-4">
+      <app-help-panel [election]="election">
+        <h3>{{ 'component.votes.help.title1' | translate }}</h3>
+        <p [innerHTML]="'component.votes.help.p1' | translate"></p>
+        <p [innerHTML]="'component.votes.help.p2' | translate"></p>
+
+        <img src="/assets/images/election/votes.svg" class="img-fluid" alt="{{ 'component.votes.title1' | translate }}" />
+      </app-help-panel>
+    </div>
+  </div>
+</div>

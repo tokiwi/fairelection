@@ -1,0 +1,206 @@
+@import 'app.theme';
+@import 'app.typography';
+@import 'bootstrap-override'; // custom bootstrap settings
+@import 'material-override'; // custom material scss
+@import '~bootstrap/scss/bootstrap-reboot';
+@import '~bootstrap/scss/bootstrap-grid';
+@import '~bootstrap/scss/tables';
+@import '~bootstrap/scss/images';
+@import '~bootstrap/scss/utilities';
+@import '~bootstrap/scss/mixins';
+@import "../icons/criterias/criteria";
+@import "../icons/general/general";
+
+/*  ---------------------------------------------------------------
+    Global html/body Rules
+    --------------------------------------------------------------- */
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-size: 12px;
+  font-family: Poppins, 'Helvetica Neue', sans-serif;
+  background-color: $app-background;
+}
+
+*:focus {
+  outline: none !important;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+strong {
+  font-weight: 600;
+}
+
+/** Hide arrows on number inputs */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  margin: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+a {
+  color: $color-blue;
+}
+
+.link {
+  color: $color-blue;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+p.hint {
+  margin: 30px 0;
+  padding: 10px;
+  font-size: 16px;
+  border-left: 5px solid #b1c7d9;
+}
+
+p.error-message {
+  margin: 0;
+  padding: 15px;
+  color: $color-white;
+  background: $color-red;
+}
+
+/*  ---------------------------------------------------------------
+    Checkbox wih icons
+    --------------------------------------------------------------- */
+.input-icon[type="checkbox"] {
+  display: none;
+}
+
+.input-icon + label {
+  display: inline-grid;
+  width: 150px;
+  height: 150px;
+  margin: 15px;
+  padding: 10px;
+  font-weight: 700;
+  text-align: center;
+  word-break: break-word;
+  background: $color-white;
+  border-radius: 22px;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+
+  i {
+    width: 90px;
+    height: 80px;
+    margin: 0 auto;
+    padding: 10px;
+    font-size: 40px;
+    line-height: 70px;
+    background: #eee;
+    border-radius: 7px;
+  }
+}
+
+.input-icon[type="checkbox"]:checked + label {
+  -webkit-box-shadow: inset 0 0 0 3px $color-green;
+  -moz-box-shadow: inset 0 0 0 3px $color-green;
+  box-shadow: inset 0 0 0 3px $color-green;
+}
+
+.checkbox-inline {
+  display: inline-block;
+}
+
+/*  ---------------------------------------------------------------
+    Buttons
+    --------------------------------------------------------------- */
+
+.btn {
+  min-width: 180px !important;
+  margin-bottom: 1px;
+
+  @include respond-to('small') {
+    width: 100% !important;
+  }
+
+  &.mat-button {
+    @include border-radius(50px);
+
+    margin: 1px 6px;
+    padding: 8px 20px;
+
+    i {
+      font-size: 24px;
+
+      &::before {
+        color: $color-green;
+      }
+    }
+  }
+
+  &.btn-bordered {
+    color: $color-green;
+    background: $color-white;
+    border: 2px solid $color-green;
+  }
+
+  &.btn-warning {
+    color: $color-red;
+    border: 2px solid $color-red;
+  }
+
+  &.btn-filled {
+    color: $color-white;
+    background: $color-green;
+  }
+
+  &.btn-error {
+    color: $color-white;
+    background: $color-red;
+  }
+
+  &.btn-xs {
+    padding: 0 10px;
+  }
+}
+
+/*  ---------------------------------------------------------------
+    Notification setup
+    --------------------------------------------------------------- */
+.default-notification-overlay,
+.info-notification-overlay,
+.success-notification-overlay,
+.warning-notification-overlay,
+.error-notification-overlay {
+  color: white;
+  background-color: $color-green;
+
+  /* -webkit-box-shadow: 0px 0px 5px 2px rgba(255,255,255,1);
+  -moz-box-shadow: 0px 0px 5px 2px rgba(255,255,255,1);
+  box-shadow: 0px 0px 5px 2px rgba(255,255,255,1); */
+}
+
+.warning-notification-overlay {
+  background-color: orangered;
+}
+
+.error-notification-overlay {
+  background-color: red;
+}
+
+#form-actions {
+  margin-top: 50px;
+}
+
+.mat-drawer-content {
+  overflow: inherit !important;
+}

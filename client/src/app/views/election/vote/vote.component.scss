@@ -1,0 +1,57 @@
+@import "src/assets/styles/app.colors";
+
+.cell-candidate-number {
+  width: 30px;
+  color: #fff;
+  text-align: center;
+  background: rgb(0 0 0 / 0.2);
+}
+
+.table-header-candidate {
+  min-width: 150px;
+}
+
+.table-cell-votes {
+  background: $color-white;
+  border: 1px solid $color-light-grey;
+}
+
+table {
+  tbody {
+    tr {
+      border-bottom: 1px solid $color-light-grey;
+
+      td {
+        padding: 0 10px;
+      }
+    }
+  }
+}
+
+:host ::ng-deep {
+  .mat-form-field-wrapper {
+    padding-bottom: 0 !important;
+  }
+
+  .mat-form-field-outline-gap,
+  .mat-form-field-outline-start,
+  .mat-form-field-outline-end {
+    background: transparent !important;
+  }
+
+  .mat-form-field-appearance-outline .mat-form-field-outline {
+    color: rgba(0, 0, 0, 0);
+  }
+
+  .mat-form-field-appearance-outline.mat-form-field-invalid.mat-form-field-invalid .mat-form-field-outline-thick {
+    color: rgba(0, 0, 0, 0);
+  }
+
+  .mat-radio-button {
+    &.invalid {
+      .mat-radio-outer-circle {
+        border-color: #f44336;
+      }
+    }
+  }
+}

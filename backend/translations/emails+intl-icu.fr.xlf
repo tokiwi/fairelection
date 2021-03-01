@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="fr" target-language="fr" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="VI39LuK" resname="reset_password_request.title">
+        <source>reset_password_request.title</source>
+        <target>Réinitialisation du mot de passe</target>
+      </trans-unit>
+      <trans-unit id="bX0sn1e" resname="reset_password_request.paragraph0">
+        <source>reset_password_request.paragraph0</source>
+        <target><![CDATA[Vous avez récemment demandé la réinitialisation de votre mot de passe pour votre compte FairElection. Utilisez le lien ci-dessous pour le réinitialiser. <strong>Cette réinitialisation de mot de passe n'est valable que pendant 1 heure.</strong>]]></target>
+      </trans-unit>
+      <trans-unit id="SYoslFG" resname="reset_password_request.link">
+        <source>reset_password_request.link</source>
+        <target>Réinitialiser mon mot de passe</target>
+      </trans-unit>
+      <trans-unit id="DvCk_5g" resname="email_footer">
+        <source>email_footer</source>
+        <target><![CDATA[Pour toute question, veuillez nous contacter à l'adresse suivante <a href="mailto:info@fairelection.ch">info@fairelection.ch</a>]]></target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

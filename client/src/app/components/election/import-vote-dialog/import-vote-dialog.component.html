@@ -1,0 +1,27 @@
+<h2 mat-dialog-title>{{ 'component.import_vote_dialog.title1' | translate }}</h2>
+<mat-dialog-content class="mat-typography">
+    <p>{{ 'component.import_vote_dialog.p1' | translate }}</p>
+    <p>
+        <button mat-button class="btn btn-bordered loading-green" (click)="downloadModel()" appMatButtonLoading [loading]="loadingModel">
+            <i class="icon-general excel"></i> {{ 'action.download_model' | translate }}
+        </button>
+    </p>
+
+    <p>{{ 'component.import_vote_dialog.p2' | translate }}</p>
+    <p>{{ 'component.import_vote_dialog.p3' | translate }}</p>
+
+    <p>
+        <button mat-button class="btn btn-bordered loading-green" (click)="uploadModel()" appMatButtonLoading [loading]="loadingUploadModel">
+            <i class="icon-general download"></i> {{ 'action.import_model' | translate }}
+        </button>
+    </p>
+
+    <input #fileInput
+           type="file"
+           style="display: none"
+           (change)="onNewFileSelected($event)" />
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-flat-button [mat-dialog-close]="false">{{ 'action.cancel' | translate }}</button>
+</mat-dialog-actions>

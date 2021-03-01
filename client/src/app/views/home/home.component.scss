@@ -1,0 +1,135 @@
+@import "src/assets/styles/app.colors";
+
+:host ::ng-deep {
+  .carousel-dot {
+    width: 15px !important;
+    height: 15px !important;
+    border-color: $color-light-grey !important;
+  }
+
+  .carousel-dot-active {
+    background: $color-green !important;
+    border-color: $color-green !important;
+  }
+}
+
+.homepage {
+  h1 {
+    font-size: 50px;
+    line-height: 69px;
+  }
+
+  h2 {
+    font-size: 40px;
+    line-height: 60px;
+  }
+
+  h3 {
+    font-size: 30px;
+    line-height: 40px;
+  }
+
+  p {
+    font-weight: 200;
+    font-size: 16px;
+    line-height: 30px;
+  }
+
+  .spacer-lg {
+    display: flex;
+    margin: 5rem 0;
+  }
+
+  .spacer-sm {
+    display: flex;
+    margin: 2rem 0;
+  }
+
+  #main-header {
+    height: 300px;
+  }
+
+  #how-it-works {
+    text-align: center;
+
+    img {
+      height: 270px;
+    }
+
+    .how-it-works-step {
+      width: 300px;
+    }
+  }
+
+  #benefits {
+    position: relative;
+    text-align: center;
+
+    .dots-top-right {
+      &::before {
+        position: absolute;
+        top: -2px;
+        right: -18px;
+        z-index: 10;
+        width: 403px;
+        height: 403px;
+        background-image: url("/assets/images/home/dots.svg");
+        background-repeat: no-repeat;
+        content: "";
+      }
+    }
+
+    .dots-bottom-left {
+      &::before {
+        position: absolute;
+        bottom: 82px;
+        left: -18px;
+        width: 403px;
+        height: 403px;
+        background-image: url("/assets/images/home/dots.svg");
+        background-repeat: no-repeat;
+        content: "";
+      }
+    }
+
+    .mat-card {
+      z-index: 100;
+
+      .icon {
+        width: 190px;
+        height: 190px;
+        margin: 0 auto;
+        padding: 30px;
+        font-size: 100px;
+        line-height: 150px;
+        text-align: center;
+        border-radius: 40px;
+      }
+
+      .icon-green {
+        background: $color-green;
+      }
+
+      .icon-blue {
+        background: $color-blue;
+      }
+    }
+  }
+
+  #try-fair-election {
+    .btn.mat-button {
+      padding: 32px 50px;
+      font-weight: 700;
+      font-size: 32px;
+      border-radius: 50px;
+    }
+  }
+}
+
+#partners {
+  margin: 0 50px;
+
+  .carousel-wrapper {
+    padding: 0 50px;
+  }
+}

@@ -1,0 +1,205 @@
+<div class="homepage container">
+  <section id="election-creator">
+    <div class="row">
+      <div class="col-md-6 mb-2">
+        <h1>{{ 'component.home.title1' | translate }}</h1>
+        <p>{{ 'component.home.p1' | translate }}</p>
+        <p>{{ 'component.home.p2' | translate }}</p>
+        <button mat-button color="accent" class="btn btn-filled" routerLink="/elections/create">{{ 'action.start' | translate }}</button>
+      </div>
+      <div class="col-md-5 offset-md-1 mb-2">
+        <img src="/assets/images/home/election-creator.svg" class="img-fluid">
+      </div>
+    </div>
+  </section>
+
+  <div class="spacer-lg"></div>
+
+  <section id=how-it-works>
+    <div class="row">
+      <div class="col-md-10 offset-md-1">
+        <h2>{{ 'component.home.title2' | translate }}</h2>
+        <p>{{ 'component.home.p3' | translate }}</p>
+        <p>{{ 'component.home.p4' | translate }}</p>
+      </div>
+    </div>
+
+    <div class="spacer-sm"></div>
+
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-start">
+      <div class="how-it-works-step mx-2">
+        <img src="assets/images/home/set-your-goals.svg" class="img-fluid my-4" alt="{{ 'component.home.title3' | translate }}">
+        <h3>{{ 'component.home.title3' | translate }}</h3>
+        <p>{{ 'component.home.p5' | translate }}</p>
+      </div>
+      <div class="how-it-works-step mx-2">
+        <img src="assets/images/home/enter-your-candidates.svg" class="img-fluid my-4" alt="{{ 'component.home.title4' | translate }}">
+        <h3>{{ 'component.home.title4' | translate }}</h3>
+        <p>{{ 'component.home.p6' | translate }}</p>
+      </div>
+      <div class="how-it-works-step mx-2">
+        <img src="assets/images/home/apply-criteria.svg" class="img-fluid my-4" alt="{{ 'component.home.title5' | translate }}">
+        <h3>{{ 'component.home.title5' | translate }}</h3>
+        <p>{{ 'component.home.p7' | translate }}</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="spacer-lg"></div>
+
+  <section id="benefits">
+    <h2>{{ 'component.home.title6' | translate }}</h2>
+
+    <div id="benefits-row-1" class="d-flex flex-column flex-lg-row justify-content-between">
+      <div class="mx-5 mt-2">
+        <mat-card>
+          <mat-card-content class="text-center">
+            <div class="icon icon-green">
+              <i class="icon-general winner"></i>
+            </div>
+
+            <h3 class="mt-3">{{ 'component.home.title7' | translate }}</h3>
+            <p class="card-text">{{ 'component.home.p8' | translate }}</p>
+
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <div class="mx-5 mt-9">
+        <mat-card>
+          <mat-card-content class="text-center">
+            <div class="icon icon-blue">
+              <i class="icon-general archive"></i>
+            </div>
+
+            <h3 class="mt-3">{{ 'component.home.title8' | translate }}</h3>
+            <p class="card-text">{{ 'component.home.p9' | translate }}</p>
+
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <div class="mx-5 mt-2 dots-top-right">
+        <mat-card>
+          <mat-card-content class="text-center">
+            <div class="icon icon-green">
+              <i class="icon-general checkbox"></i>
+            </div>
+
+            <h3 class="mt-3">{{ 'component.home.title9' | translate }}</h3>
+            <p class="card-text">{{ 'component.home.p10' | translate }}</p>
+
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+
+    <div id="benefits-row-2" class="d-flex flex-column flex-lg-row justify-content-between">
+      <div class="mx-5 mt-2 dots-bottom-left">
+        <mat-card>
+          <mat-card-content class="text-center">
+            <div class="icon icon-green">
+              <i class="icon-general lamp"></i>
+            </div>
+
+            <h3 class="mt-3">{{ 'component.home.title10' | translate }}</h3>
+            <p class="card-text">{{ 'component.home.p11' | translate }}</p>
+
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <div class="mx-5 mt-9">
+        <mat-card>
+          <mat-card-content class="text-center">
+            <div class="icon icon-blue">
+              <i class="icon-general padlock"></i>
+            </div>
+
+            <h3 class="mt-3">{{ 'component.home.title11' | translate }}</h3>
+            <p class="card-text">{{ 'component.home.p12' | translate }}</p>
+
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <div class="mx-5 mt-2">
+        <mat-card>
+          <mat-card-content class="text-center">
+            <div class="icon icon-green">
+              <i class="icon-general switzerland"></i>
+            </div>
+
+            <h3 class="mt-3">{{ 'component.home.title12' | translate }}</h3>
+            <p class="card-text">{{ 'component.home.p13' | translate }}</p>
+
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </section>
+
+  <div class="spacer-lg"></div>
+
+  <section id="scenario-simulation">
+    <div class="row">
+      <div class="col-md-6 mb-2">
+        <h2>{{ 'component.home.title13' | translate }}</h2>
+        <p>{{ 'component.home.p14' | translate }}</p>
+
+        <a mat-button class="btn btn-filled" href="https://simulation.fairelection.ch">{{ 'action.see_simulation' | translate }}</a>
+      </div>
+      <div class="col-md-5 offset-md-1 mb-2">
+        <img src="assets/images/home/scenario-simulation.svg" class="img-fluid" alt="{{ 'component.home.title13' | translate }}">
+      </div>
+    </div>
+  </section>
+
+  <div class="spacer-lg"></div>
+
+  <section id="partners">
+    <h2>{{ 'component.home.title14' | translate }}</h2>
+
+    <div class="carousel-wrapper">
+      <carousel cellsToShow="4" [dots]="false" [loop]="true" [margin]="0" [arrows]="true" arrowsOutside="false" autoplay="true" cellWidth="350px">
+        <div class="carousel-cell">
+          <a href="https://ethix.ch">
+            <img src="/assets/images/partners/ethix.png" alt="Ethix">
+          </a>
+        </div>
+        <div class="carousel-cell">
+          <a href="https://www.stiftung-mercator.ch">
+            <img src="/assets/images/partners/mercator.png" alt="Mercator">
+          </a>
+        </div>
+        <div class="carousel-cell">
+          <a href="https://prototypefund.opendata.ch">
+            <img src="/assets/images/partners/p.png" alt="P">
+          </a>
+        </div>
+        <div class="carousel-cell">
+          <a href="https://opendata.swiss">
+            <img src="/assets/images/partners/opendata.png" alt="Opendata">
+          </a>
+        </div>
+        <div class="carousel-cell">
+          <a href="https://tokiwi.ch">
+            <img src="/assets/images/partners/tokiwi.png" alt="Tokiwi">
+          </a>
+        </div>
+      </carousel>
+    </div>
+
+  </section>
+
+  <div class="spacer-lg"></div>
+
+  <section id="try-fair-election">
+    <div class="row">
+      <div class="col-md-7">
+        <h2>{{ 'component.home.title15' | translate }}</h2>
+      </div>
+      <div class="col-md-5">
+        <button mat-button class="btn btn-filled" routerLink="/elections/create">{{ 'action.try_fair_election' | translate }}</button>
+      </div>
+    </div>
+
+  </section>
+
+</div>

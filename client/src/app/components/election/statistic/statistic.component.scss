@@ -1,0 +1,220 @@
+@import "src/assets/styles/app.colors";
+
+#table-statistics {
+  thead {
+    tr {
+      text-align: center;
+      background: #b1c7d9;
+
+      th {
+        padding: 30px 10px;
+        font-weight: 200;
+        font-size: 12px;
+
+        .legend {
+          display: inline-block;
+          margin-right: 15px;
+        }
+      }
+
+      span {
+        display: inline-block;
+        width: 25px;
+        height: 8px;
+        border-radius: 5px;
+
+        &.red {
+          background: $color-red;
+        }
+
+        &.green {
+          background: $color-green;
+        }
+
+        &.dark-grey {
+          background: $color-dark-grey;
+        }
+
+        &.black {
+          width: 20px;
+          height: 3px;
+          background: $color-black;
+          border-radius: 0;
+          transform: rotate(90deg);
+        }
+      }
+    }
+  }
+
+  tbody {
+    tr {
+      padding: 10px 0;
+      text-align: center;
+
+      & + tr:not(.errors) {
+        border-top: 1px solid $color-light-grey;
+      }
+
+      td {
+        padding: 40px 10px;
+        background: #fff;
+
+        .criteria-icon {
+          display: block;
+          width: 60px;
+          margin: 0 auto;
+          padding: 10px;
+          font-size: 36px;
+          line-height: 36px;
+          text-align: center;
+          background: #f6f6f6;
+          border-radius: 15px;
+        }
+
+        h2 {
+          margin: 0;
+        }
+
+        &.criteria-name {
+          width: 160px;
+          min-width: 160px;
+          max-width: 190px;
+
+          h2 {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+          }
+        }
+      }
+    }
+  }
+
+  tr.errors {
+    td {
+      padding: 20px 0 !important;
+      color: #f00;
+      background-image: -webkit-linear-gradient(rgb(0 180 139 / 0), rgb(255 0 0 / 0.3)) !important; /* For Chrome 25 and Safari 6, iOS 6.1, Android 4.3 */
+      background-image: -moz-linear-gradient(rgb(0 180 139 / 0), rgb(255 0 0 / 0.3)) !important; /* For Firefox (3.6 to 15) */
+      background-image: -o-linear-gradient(rgb(0 180 139 / 0), rgb(255 0 0 / 0.3)) !important; /* For old Opera (11.1 to 12.0) */
+      background-image: linear-gradient(rgb(0 180 139 / 0), rgb(255 0 0 / 0.3)) !important; /* Standard syntax; must be last */
+    }
+  }
+}
+
+.criteria-item {
+  width: 80px;
+  min-width: 80px;
+}
+
+.criteria-tick {
+  width: 46px;
+  min-width: 46px;
+
+  .tick {
+    width: 23px;
+    height: 23px;
+    margin-bottom: 2px;
+    color: $color-red;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 24px;
+    text-align: center;
+    border: 1px solid $color-red;
+    border-radius: 50%;
+
+    i {
+      &::before {
+        color: $color-red;
+      }
+    }
+
+    &.tick-green {
+      border-color: $color-green;
+
+      i {
+        &::before {
+          color: $color-green;
+        }
+      }
+    }
+  }
+}
+
+.criteria-bars {
+  width: 80%;
+}
+
+.criteria-number {
+  width: 100px;
+  min-width: 100px;
+}
+
+.criteria-percent {
+  width: 90px;
+  min-width: 90px;
+}
+
+ul.bargraph {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  & > li {
+    position: relative;
+    margin-bottom: 5px;
+  }
+
+  .inner {
+    position: absolute;
+    top: 8px;
+    left: 0;
+    width: 33%;
+    height: 5px;
+    background: $color-dark-grey;
+
+    &::after {
+      position: absolute;
+      top: -8px;
+      right: -17px;
+      font-size: 10px;
+      content: attr(data-percent);
+    }
+  }
+
+  ul {
+    height: 21px;
+    margin: 0;
+    padding: 0;
+
+    li {
+      position: relative;
+      display: inline-block;
+      height: 20px;
+      padding: 8px 0;
+
+      &.bar-red {
+        background: $color-red;
+        box-shadow: inset -3px 0 0 0 #000;
+
+        &.checked {
+          background: $color-green;
+        }
+
+        //&::after {
+        //  position: absolute;
+        //  page-break-after: always;
+        //  content: "5";
+        //  right: -1px;
+        //  font-size: 10px;
+        //  top: -17px;
+        //}
+      }
+
+      &.bar-green {
+        background: $color-green;
+        opacity: 0.15;
+      }
+    }
+  }
+}

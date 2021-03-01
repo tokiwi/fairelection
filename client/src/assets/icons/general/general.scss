@@ -1,0 +1,240 @@
+@font-face {
+  font-weight: normal;
+  font-family: 'general';
+  font-style: normal;
+  src: url('src/assets/icons/general/general.eot?bkpua4');
+  src:
+    url('src/assets/icons/general/general.eot?bkpua4#iefix') format('embedded-opentype'),
+    url('src/assets/icons/general/general.ttf?bkpua4') format('truetype'),
+    url('src/assets/icons/general/general.woff?bkpua4') format('woff'),
+    url('src/assets/icons/general/general.svg?bkpua4#icomoon') format('svg');
+  font-display: block;
+}
+
+[class^="icon-general"],
+[class*=" icon-general"] {
+  font-weight: normal;
+
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'general', sans-serif !important;
+  font-style: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-transform: none;
+  speak: never;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-general.checked::before {
+  color: #66ce62;
+  content: "\e900";
+}
+
+.icon-general.hide-password::before {
+  color: #d4dde3;
+  content: "\e901";
+}
+
+.icon-general.left-arrow::before {
+  color: #2d43b2;
+  content: "\e902";
+}
+
+.icon-general.location-fill::before {
+  color: #fff;
+  content: "\e903";
+}
+
+.icon-general.lock-form::before {
+  color: #2d43b2;
+  content: "\e904";
+}
+
+.icon-general.mail-form::before {
+  color: #2d43b2;
+  content: "\e905";
+}
+
+.icon-general.ok::before {
+  color: #00b48b;
+  content: "\e906";
+}
+
+.icon-general.padlock::before {
+  color: #fff;
+  content: "\e907";
+}
+
+.icon-general.pdf::before {
+  color: #2d43b2;
+  content: "\e908";
+}
+
+.icon-general.phone-fill::before {
+  color: #fff;
+  content: "\e909";
+}
+
+.icon-general.right-arrow::before {
+  color: #2d43b2;
+  content: "\e90a";
+}
+
+.icon-general.right-arrow-help .path1::before {
+  color: rgb(237, 243, 248);
+  content: "\e90b";
+}
+
+.icon-general.right-arrow-help .path2::before {
+  margin-left: -1em;
+  color: rgb(45, 67, 178);
+  content: "\e90c";
+}
+
+.icon-general.share::before {
+  content: "\e90d";
+}
+
+.icon-general.user::before {
+  color: #2d43b2;
+  content: "\e90e";
+}
+
+.icon-general.warning::before {
+  color: #f60a20;
+  content: "\e90f";
+}
+
+.icon-general.winner::before {
+  color: #fff;
+  content: "\e910";
+}
+
+.icon-general.checkbox::before {
+  color: #fff;
+  content: "\e911";
+}
+
+.icon-general.switzerland::before {
+  color: #fff;
+  content: "\e912";
+}
+
+.icon-general.lamp::before {
+  color: #fff;
+  content: "\e913";
+}
+
+.icon-general.archive::before {
+  color: #fff;
+  content: "\e914";
+}
+
+.icon-general.add::before {
+  color: #2d43b2;
+  content: "\e915";
+}
+
+.icon-general.add-action::before {
+  color: #00b48b;
+  content: "\e916";
+}
+
+.icon-general.arrow-bottom::before {
+  color: #00b48b;
+  content: "\e917";
+}
+
+.icon-general.arrow-up::before {
+  color: #50b18d;
+  content: "\e918";
+}
+
+.icon-general.close::before {
+  color: #2d43b2;
+  content: "\e919";
+}
+
+.icon-general.close-modal .path1::before {
+  color: rgb(237, 243, 248);
+  content: "\e91a";
+}
+
+.icon-general.close-modal .path2::before {
+  margin-left: -1em;
+  color: rgb(45, 67, 178);
+  content: "\e91b";
+}
+
+.icon-general.close-modal .path3::before {
+  margin-left: -1em;
+  color: rgb(45, 67, 178);
+  content: "\e91c";
+}
+
+.icon-general.delete::before {
+  color: #d8dde3;
+  content: "\e91d";
+}
+
+.icon-general.done .path1::before {
+  color: rgb(255, 255, 255);
+  content: "\e91e";
+}
+
+.icon-general.done .path2::before {
+  margin-left: -1em;
+  color: none;
+  content: "\e91f";
+}
+
+.icon-general.done .path3::before {
+  margin-left: -1em;
+  color: rgb(102, 206, 98);
+  content: "\e920";
+}
+
+.icon-general.download::before {
+  color: #2d43b2;
+  content: "\e921";
+}
+
+.icon-general.edit::before {
+  color: #fff;
+  content: "\e922";
+}
+
+.icon-general.email::before {
+  color: #fff;
+  content: "\e923";
+}
+
+.icon-general.error .path1::before {
+  color: rgb(255, 255, 255);
+  content: "\e924";
+}
+
+.icon-general.error .path2::before {
+  margin-left: -1em;
+  color: none;
+  content: "\e925";
+}
+
+.icon-general.error .path3::before {
+  margin-left: -1em;
+  color: rgb(254, 33, 33);
+  content: "\e926";
+}
+
+.icon-general.excel::before {
+  color: #2d43b2;
+  content: "\e927";
+}
+
+.icon-general.Groupe-3403::before {
+  color: #fff;
+  content: "\e928";
+}

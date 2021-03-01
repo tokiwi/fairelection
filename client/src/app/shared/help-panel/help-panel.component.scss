@@ -1,0 +1,32 @@
+:host {
+  flex: 0 0 430px;
+  max-width: 430px;
+  margin-top: 10px;
+}
+
+#help-panel-wrapper {
+  margin-bottom: 20px;
+
+  header {
+    padding: 10px 50px 10px 50px;
+    background: #2d43b2;
+    border-radius: 25px;
+
+    h2 {
+      margin: 0;
+      color: #fff;
+      font-weight: 200;
+    }
+  }
+
+  section {
+    h3 {
+      font-weight: 600;
+    }
+
+    margin-top: 10px;
+    padding: 50px;
+    background: #fff;
+    border-radius: 25px;
+  }
+}

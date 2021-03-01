@@ -1,0 +1,105 @@
+@import "src/assets/styles/app.colors";
+
+.criterias-slider {
+  cursor: move;
+}
+
+.table-fixed {
+  margin: 0 auto;
+  table-layout: fixed;
+}
+
+.criteria {
+  display: grid;
+  width: 150px;
+  height: 130px;
+  margin: 15px auto;
+  padding: 10px;
+  font-weight: 700;
+  text-align: center;
+  background: #fff;
+  border-radius: 22px;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+
+  i {
+    width: 90px;
+    height: 80px;
+    margin: 0 auto;
+    padding: 10px;
+    font-size: 40px;
+    line-height: 70px;
+    background: #eee;
+    border-radius: 7px;
+  }
+}
+
+.cell-candidate-number {
+  width: 30px;
+  padding: 0 10px;
+  color: #fff;
+  background: rgb(0 0 0 / 0.2);
+}
+
+.cell-candidate-action {
+  width: 30px;
+}
+
+.radio-header-cell {
+  display: table-cell;
+  width: 45px;
+  min-width: 45px;
+  text-align: center;
+}
+
+.radio-cell {
+  width: 45px;
+  padding-left: 3px;
+  text-align: center;
+}
+
+.row-candidate {
+  border-bottom: 1px solid rgb(0 0 0);
+}
+
+:host ::ng-deep {
+  .mat-form-field-wrapper {
+    padding-bottom: 0 !important;
+  }
+
+  .mat-form-field-outline-gap,
+  .mat-form-field-outline-start,
+  .mat-form-field-outline-end {
+    background: transparent !important;
+  }
+
+  .mat-form-field-appearance-outline .mat-form-field-outline {
+    color: rgba(0, 0, 0, 0);
+  }
+
+  .mat-form-field-appearance-outline.mat-form-field-invalid.mat-form-field-invalid .mat-form-field-outline-thick {
+    color: rgba(0, 0, 0, 0);
+  }
+
+  .mat-radio-button {
+    &.invalid {
+      .mat-radio-outer-circle {
+        border-color: #f44336;
+      }
+    }
+  }
+}
+
+.add-candidate {
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 45px;
+    content: attr(data-title);
+  }
+}
+
+tfoot {
+  button {
+    display: block;
+  }
+}

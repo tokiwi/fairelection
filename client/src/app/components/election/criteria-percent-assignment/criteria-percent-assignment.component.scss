@@ -1,0 +1,33 @@
+@import "src/assets/styles/app.colors";
+
+:host {
+  width: 100%;
+}
+
+.header {
+  i {
+    display: block;
+    width: 90px;
+    height: 80px;
+    margin: 0 auto;
+    padding: 10px;
+    font-size: 40px;
+    line-height: 70px;
+    text-align: center;
+    background: #eee;
+    border-radius: 20px;
+  }
+
+  h2 {
+    overflow: hidden;
+    white-space: nowrap;
+    text-align: center;
+    text-overflow: ellipsis;
+  }
+}
+
+.assignment {
+  .mat-slider {
+    width: 100%;
+  }
+}

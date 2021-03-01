@@ -1,0 +1,75 @@
+<div class="container h-100">
+  <div class="row">
+    <div class="offset-md-1 col-md-5 align-self-end">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>{{ 'component.register.title1' | translate }}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <form [formGroup]="form" >
+            <div class="row">
+              <div class="col-md-12">
+                <mat-form-field>
+                  <mat-label>{{ 'word.full_name' | translate }}</mat-label>
+                  <input matInput formControlName="fullName">
+                  <mat-error *ngIf="form.get('fullName').hasError('required')">
+                    {{ 'validator.field.required' | translate }}
+                  </mat-error>
+                  <mat-error *ngIf="form.get('fullName').hasError('maxlength')">
+                    {{ 'validator.field.too_long' | translate: { max: this.form.get('fullName').errors.maxlength.requiredLength} }}
+                  </mat-error>
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <mat-form-field>
+                  <mat-label>{{ 'word.email' | translate }}</mat-label>
+                  <input matInput formControlName="email">
+                  <mat-error *ngIf="form.get('email').hasError('required')">
+                    {{ 'validator.field.required' | translate }}
+                  </mat-error>
+                  <mat-error *ngIf="form.get('email').hasError('email')">
+                    {{ 'validator.field.email' | translate }}
+                  </mat-error>
+                  <mat-error *ngIf="form.get('email').hasError('maxlength')">
+                    {{ 'validator.field.too_long' | translate: { max: this.form.get('email').errors.maxlength.requiredLength} }}
+                  </mat-error>
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <mat-form-field>
+                  <mat-label>{{ 'word.password' | translate }}</mat-label>
+                  <input matInput [type]="this.hidePassword ? 'password' : 'text'" formControlName="password" autocomplete="new-password">
+                  <button (click)="this.hidePassword = !this.hidePassword" mat-icon-button matSuffix type="button">
+                    <mat-icon>
+                      {{ this.hidePassword ? 'visibility_off' : 'visibility' }}
+                    </mat-icon>
+                  </button>
+                  <mat-error *ngIf="form.get('password').hasError('required')">
+                    {{ 'validator.field.required' | translate }}
+                  </mat-error>
+                  <mat-error *ngIf="form.get('password').hasError('minlength')">
+                    {{ 'validator.field.too_short' | translate: { min: this.form.get('password').errors.minlength.requiredLength} }}
+                  </mat-error>
+                  <mat-error *ngIf="form.get('password').hasError('maxlength')">
+                    {{ 'validator.field.too_long' | translate: { max: this.form.get('password').errors.maxlength.requiredLength} }}
+                  </mat-error>
+                </mat-form-field>
+              </div>
+            </div>
+
+            <button mat-button color="primary" class="btn btn-filled" (click)="save()" appMatButtonLoading [loading]="loading">
+              {{ 'action.register' | translate }} <i class="icon-floppy-disk"></i>
+            </button>
+          </form>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <div class="col-md-5">
+      <img src="/assets/images/register/register.svg" class="img-fluid mt-5" alt="{{ 'component.register.title1' | translate }}" />
+    </div>
+  </div>
+</div>

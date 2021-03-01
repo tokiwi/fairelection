@@ -1,0 +1,36 @@
+<app-stepper [activeSteps]="[1, 2, 3, 4]" [election]="election" class="d-none d-lg-block"></app-stepper>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-lg-8 main mb-6">
+      <h4 class="mb-0">{{ election.name }}</h4>
+      <h1>{{ 'component.statistics.title1' | translate }}</h1>
+      <p>{{ 'component.statistics.p1' | translate }}</p>
+
+      <app-statistic [election]="election" (hasError)="onError($event)"></app-statistic>
+
+      <ng-container *ngIf="false === (solverResourceService.isSolvable | async) && !loading">
+        <p class="error-message">{{ 'component.statistics.p2' | translate }}</p>
+      </ng-container>
+
+      <div id="form-actions" class="text-right">
+        <button mat-button class="btn btn-bordered" [routerLink]="election['@id'] + '/candidates'">
+          {{ 'action.previous_step' | translate }}
+        </button>
+
+        <button mat-button color="primary" class="btn btn-filled" [disabled]="hasError || false === (this.solverResourceService.isSolvable | async)" [routerLink]="election['@id'] + '/votes'">
+          {{ 'action.next_step' | translate }}
+        </button>
+      </div>
+    </div>
+    <div class="col-md-12 col-lg-4">
+      <app-help-panel [election]="election">
+        <h3>{{ 'component.statistics.help.title1' | translate }}</h3>
+        <p [innerHTML]="'component.statistics.help.p1' | translate"></p>
+        <p [innerHTML]="'component.statistics.help.p2' | translate"></p>
+
+        <img src="assets/images/election/criteria_assignment.svg" class="img-fluid" alt="" />
+      </app-help-panel>
+    </div>
+  </div>
+</div>

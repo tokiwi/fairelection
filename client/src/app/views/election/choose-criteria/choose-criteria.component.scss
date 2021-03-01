@@ -1,0 +1,44 @@
+@import "src/assets/styles/app.colors";
+
+.mat-drawer {
+  min-width: 300px;
+}
+
+.criteria-add {
+  display: inline-grid;
+  width: 150px;
+  height: 150px;
+  margin: 15px;
+  padding: 10px;
+  font-weight: 700;
+  line-height: 16px;
+  text-align: center;
+  border: 2px dashed $color-green;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.criteria-add .label i {
+  width: 90px;
+  height: 90px;
+  margin: 0 auto;
+  padding: 10px;
+  font-size: 40px;
+  background: #fff;
+  border-radius: 7px;
+}
+
+.criteria-center {
+  width: 90px;
+  height: 80px;
+  margin: 0 auto;
+  padding: 10px;
+  font-size: 40px;
+  line-height: 70px;
+  background: #fff;
+  border-radius: 7px;
+}
+
+.edit-criteria {
+  position: absolute;
+}

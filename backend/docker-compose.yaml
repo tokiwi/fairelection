@@ -1,0 +1,15 @@
+version: '3.7'
+
+services:
+  database:
+    image: mariadb:10.2.31
+    ports: [3306]
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: main
+      MYSQL_PASSWORD: main
+      MYSQL_DATABASE: main
+
+  mailer:
+    image: schickling/mailcatcher
+    ports: [1025, 1080]

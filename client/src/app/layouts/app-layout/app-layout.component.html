@@ -1,0 +1,152 @@
+<mat-sidenav-container class="sidenav-container all-wrap">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport="true"
+               [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+               [mode]="(isHandset$ | async) ? 'over' : 'side'"
+               [opened]="false"
+  >
+
+    <div class="d-flex flex-column h-100">
+      <mat-toolbar class="my-4">
+        <img src="assets/images/logo.png" alt="FairElection" class="logo img-fluid" routerLink="/">
+      </mat-toolbar>
+
+      <mat-action-list class="sidenav-main-menu h-100">
+        <ng-container *ngFor="let item of this.menu">
+          <mat-list-item routerLinkActive="active" [routerLinkActiveOptions]="{exact: false}" [routerLink]="item.link">
+            <button>
+              {{ item.label | translate}}
+            </button>
+          </mat-list-item>
+        </ng-container>
+
+        <ng-container *ngIf="false === (authService.isAuthenticated | async)">
+          <mat-list-item routerLinkActive="active" [routerLinkActiveOptions]="{exact: false}" routerLink="/login">
+            <button>
+              {{ 'menu.login' | translate }}
+            </button>
+          </mat-list-item>
+          <mat-list-item routerLinkActive="active" [routerLinkActiveOptions]="{exact: false}" routerLink="/register">
+            <button>
+              {{ 'menu.register' | translate }}
+            </button>
+          </mat-list-item>
+        </ng-container>
+
+        <ng-container *ngIf="true === (authService.isAuthenticated | async)">
+          <mat-list-item (click)="logout()">
+            <button>
+              {{ 'action.logout' | translate }}
+            </button>
+          </mat-list-item>
+        </ng-container>
+
+      </mat-action-list>
+
+      <div class="footer px-2 mb-4 text-center">
+        Powered by <a href="https://tokiwi.ch" target="_blank">Tokiwi</a>
+      </div>
+    </div>
+  </mat-sidenav>
+  <mat-sidenav-content class="sidenav-content mat-drawer-content mat-sidenav-content page-wrap">
+    <div class="progress-bar-wrapper">
+      <mat-progress-bar mode="indeterminate" *ngIf="loadingService.loading$ | async"></mat-progress-bar>
+    </div>
+
+    <mat-toolbar color="primary" class="md-tall mat-elevation-z4">
+      <div class="container d-flex align-items-center">
+        <button
+          type="button"
+          aria-label="Toggle sidenav"
+          mat-icon-button
+          (click)="drawer.toggle()"
+          *ngIf="(isLargeAndUp$ | async) === false">
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+
+        <img src="assets/images/logo.png" alt="FairElection" routerLink="/" class="logo img-fluid">
+
+        <span class="spacer"></span>
+
+        <ng-container *ngIf="true === (isLargeAndUp$ | async)">
+          <ng-container *ngIf="true === (authService.isAuthenticated | async)">
+            <button mat-button class="d-inline" routerLink="/elections">
+              {{ 'menu.my_elections' | translate }}
+            </button>
+          </ng-container>
+
+          <button mat-button class="d-inline" routerLink="/elections/create">
+            {{ 'menu.new_election' | translate }}
+          </button>
+
+          <button mat-button class="d-inline" routerLink="/faq">
+            {{ 'menu.faq' | translate }}
+          </button>
+        </ng-container>
+
+        <ng-container *ngIf="false === (authService.isAuthenticated | async) && true === (isLargeAndUp$ | async)">
+          <button mat-button class="btn btn-bordered btn-primary" routerLink="/login">
+            {{ 'menu.login' | translate }}
+          </button>
+
+          <button mat-button class="btn btn-filled btn-primary" routerLink="/register">
+            {{ 'menu.register' | translate }}
+          </button>
+        </ng-container>
+
+        <ng-container *ngIf="true === (authService.isAuthenticated | async) && true === (isLargeAndUp$ | async)">
+          <button mat-button class="btn btn-bordered btn-primary" (click)="logout()">
+            {{ 'action.logout' | translate }}
+          </button>
+        </ng-container>
+
+        <button mat-button class="d-inline dashboard-avatar user-menu" [matMenuTriggerFor]="language_menu">
+          {{ (i18n.currentLangObs | async) | uppercase }}
+          <mat-icon>expand_more</mat-icon>
+        </button>
+        <mat-menu #language_menu="matMenu">
+          <button *ngFor="let language of languages; last as last"  mat-menu-item (click)="changeLanguage(language.locale)">
+            <span>{{ language.name | translate }}</span>
+            <mat-divider [inset]="false" *ngIf="!last"></mat-divider>
+          </button>
+        </mat-menu>
+      </div>
+
+    </mat-toolbar>
+
+    <main class="content sidenav-content-inner">
+      <!-- Module content would be loaded here -->
+      <router-outlet></router-outlet>
+    </main>
+
+    <footer class="site-footer">
+      <svg viewBox="0 0 441.06042 86.254227" class="site-wave" style="width:100%;height:100%">
+        <path transform="translate(84.458781,-282.59908)" d="m -84.458781,348.87622 v -19.97705 l 4.34826,-4.59013 c 6.83451,-7.21468 15.6455,-15.15052 22.501882,-20.26687 31.364438,-23.40472 65.2771896,-27.49391 108.087348,-13.03312 10.9337,3.69328 22.15756,8.47839 35.14788,14.98471 25.975611,13.01013 55.672981,24.16151 81.777621,30.70755 28.47522,7.1405 53.84157,10.1877 84.8193,10.18912 13.38284,5.3e-4 22.7284,-0.33723 48.15417,-1.74082 10.28075,-0.56751 28.77074,-0.77871 34.925,-0.39889 7.60288,0.46922 11.65135,0.95095 18.32239,2.1802 l 2.97657,0.54848 v 10.68696 10.68694 H 136.07143 -84.458781 Z" style="fill:#00b38a"></path>
+      </svg>
+      <div class="site-contact">
+        <section class="site-location">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6">
+                <img src="assets/images/logo-white.png" alt="FairElection Logo" class="site-logo img-fluid" style="max-width: 350px;">
+              </div>
+              <div class="col-md-6">
+                <div class="row">
+                  <div class="col-md-6">
+                  </div>
+                  <div class="col-md-6">
+                    <h3>{{ 'word.contact' | translate }}</h3>
+                    <address>
+                      info@fairelection.ch
+                    </address>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="site-copyright">Copyright © 2020 FairElection - Powered by <a href="https://tokiwi.ch">tokiwi</a></section>
+      </div>
+    </footer>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+

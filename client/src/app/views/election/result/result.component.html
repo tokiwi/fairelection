@@ -1,0 +1,36 @@
+<app-stepper [activeSteps]="[1, 2, 3, 4, 5, 6]" [election]="election" class="d-none d-lg-block"></app-stepper>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-lg-8 main mb-6">
+      <h4 class="mb-0">{{ election.name }}</h4>
+      <h1>{{ 'component.results.title1' | translate }}</h1>
+
+      <section class="mb-5">
+        <app-result-component [election]="election" class="mb-3"></app-result-component>
+      </section>
+
+      <section class="mt-3">
+        <h2>{{ 'component.results.title3' | translate }}</h2>
+        <app-statistic [election]="election" [electedOnly]="true" class="mt-3"></app-statistic>
+      </section>
+
+      <p class="hint" [innerHTML]="'component.results.p1' | translate"></p>
+
+      <div id="form-actions" class="text-right">
+        <button mat-button class="btn btn-bordered" [routerLink]="election['@id'] + '/votes'">
+          {{ 'action.previous_step' | translate }}
+        </button>
+      </div>
+    </div>
+    <div class="col-md-12 col-lg-4">
+      <app-help-panel [election]="election">
+        <h3>{{ 'component.results.help.title1' | translate }}</h3>
+        <p [innerHTML]="'component.results.help.p1' | translate"></p>
+        <p [innerHTML]="'component.results.help.p2' | translate"></p>
+
+        <img src="assets/images/election/criteria_assignment.svg" class="img-fluid" alt="{{ 'component.results.help.title1' | translate }}" />
+      </app-help-panel>
+    </div>
+  </div>
+</div>

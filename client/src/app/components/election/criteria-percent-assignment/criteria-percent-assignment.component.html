@@ -1,0 +1,24 @@
+<mat-card>
+  <mat-card-content>
+    <div class="header">
+      <i class="icon-criteria {{ electionCriteria.criteria.pictogram }}"></i>
+      <h2 class="mt-2">{{ electionCriteria.criteria.name }}</h2>
+    </div>
+
+    <div class="assignments">
+      <div class="assignment" *ngFor="let assignment of electionCriteria.assignments">
+        <h4 [innerHTML]="'title.at_least_n_people' | translate:{number: percentsMap.get(assignment['@id']), acronym: assignment.item.acronym}"></h4>
+        <mat-slider
+          thumbLabel
+          [tickInterval]="1"
+          min="0"
+          [max]="numberOfPeopleToElect"
+          [step]="1"
+          #slider
+          [value]="percentsMap.get(assignment['@id'])"
+          (input)="onSliderChange($event, assignment['@id'])"
+        ></mat-slider>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

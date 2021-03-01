@@ -1,0 +1,10 @@
+<div id="election-progress" class="mat-elevation-z3">
+  <div class="container">
+    <div class="d-flex justify-content-around w-100">
+      <div class="step align-items-center" [class.active]="isActive(step)" [class.passed]="isActiveOrPassed(step)" *ngFor="let step of steps" [routerLink]="isActiveOrPassed(step) ? election['@id'] + '/' + step.path : []">
+        <div class="step-number">{{ step.stepNumber }}</div>
+        {{ step.text | translate }}
+      </div>
+    </div>
+  </div>
+</div>

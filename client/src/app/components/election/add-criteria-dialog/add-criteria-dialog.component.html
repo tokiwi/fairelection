@@ -1,0 +1,97 @@
+<h2 mat-dialog-title>{{ 'title.add_criteria' | translate }}</h2>
+<mat-dialog-content class="mat-typography">
+  <form [formGroup]="form" >
+    <div class="row">
+      <div class="col-md-12">
+        <mat-form-field>
+          <mat-label>{{ 'word.criteria_name' | translate }}</mat-label>
+          <input matInput formControlName="name">
+          <mat-hint>{{ 'hint.criteria_name' | translate }}</mat-hint>
+          <mat-error *ngIf="form.get('name').hasError('required')">
+            {{ 'validator.field.required' | translate }}
+          </mat-error>
+          <mat-error *ngIf="form.get('name').hasError('maxlength')">
+            {{ 'validator.field.too_long' | translate: { max: this.form.get('name').errors.maxlength.requiredLength} }}
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+    <div id="icons" class="row">
+      <div class="col-md-12 my-2">
+        <div class="mat-small">
+          {{ 'word.pictogram' | translate }}
+        </div>
+
+        <mat-radio-group class="radio-icon" formControlName="pictogram">
+          <mat-radio-button *ngFor="let pictogram of pictograms" [value]="pictogram">
+            <i class="icon-criteria {{ pictogram }}"></i>
+          </mat-radio-button>
+        </mat-radio-group>
+
+        <mat-error *ngIf="submitted && form.get('pictogram').hasError('required')">
+          {{ 'validator.field.required' | translate }}
+        </mat-error>
+      </div>
+    </div>
+
+    <div class="items" formArrayName="items">
+      <p>{{ 'component.add_criteria_dialog.p1' | translate }}</p>
+
+      <div *ngFor="let item of form.get('items')['controls']; let i = index;" [formGroupName]="i">
+        <div class="content">
+          <div class="d-flex justify-content-between align-items-center">
+            <div>
+              <button class="btn-color-grey"
+                      tabindex="-1"
+                      mat-icon-button
+                      type="button"
+                      (click)="removeItemGroup(i)">
+                <mat-icon class="mat-icon-color-grey">delete_outline</mat-icon>
+              </button>
+            </div>
+            <div>
+              <mat-form-field>
+                <mat-label>{{ 'word.category_name' | translate }}</mat-label>
+                <input matInput
+                       formControlName="name">
+                <mat-hint>{{ 'hint.man' | translate }}</mat-hint>
+
+                <mat-error *ngIf="item.get('name').hasError('required')">
+                  {{ 'validator.field.required' | translate }}
+                </mat-error>
+                <mat-error *ngIf="item.get('name').hasError('maxlength')">
+                  {{ 'validator.field.too_long' | translate: { max: item.get('name').errors.maxlength.requiredLength} }}
+                </mat-error>
+              </mat-form-field>
+            </div>
+            <div>
+              <mat-form-field>
+                <mat-label>{{ 'word.acronym' | translate }}</mat-label>
+                <input matInput
+                       formControlName="acronym">
+                <mat-hint>
+                  {{ 'hint.man_acronym' | translate }}
+                </mat-hint>
+                <mat-error *ngIf="item.get('acronym').hasError('required')">
+                  {{ 'validator.field.required' | translate }}
+                </mat-error>
+                <mat-error *ngIf="item.get('acronym').hasError('maxlength')">
+                  {{ 'validator.field.too_long' | translate: { max: item.get('acronym').errors.maxlength.requiredLength} }}
+                </mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button mat-icon-button type="button" color="accent" class="add-item" (click)="addItem()" [attr.data-title]="'action.add_category' | translate">
+      <mat-icon>add_circle_outline</mat-icon>
+    </button>
+
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-flat-button [mat-dialog-close]="false">{{ 'action.cancel' | translate }}</button>
+  <button mat-flat-button color="accent" (click)="save()" appMatButtonLoading [loading]="loading">{{ 'action.save' | translate }}</button>
+</mat-dialog-actions>

@@ -1,0 +1,10 @@
+@import "src/assets/styles/app.colors";
+
+.mat-expansion-panel {
+  margin-bottom: 10px;
+}
+
+.mat-expansion-panel-header-title {
+  padding: 10px 10px;
+  color: $color-green;
+}

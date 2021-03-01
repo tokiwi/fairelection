@@ -1,0 +1,67 @@
+<app-stepper [activeSteps]="[1]" [election]="election" class="d-none d-lg-block"></app-stepper>
+
+<div class="container">
+  <div class="row">
+
+    <div class="col-sm-12 col-lg-8 main mb-6">
+      <h4 class="mb-0">{{ election.name }}</h4>
+      <h1>{{ 'component.choose_criteria.title1' | translate }}</h1>
+      <p>{{ 'component.choose_criteria.p1' | translate }}</p>
+
+      <form [formGroup]="form">
+        <div class="checkbox-inline" *ngFor="let criteria of this.criterias">
+          <div class="edit-criteria">
+            <button mat-mini-fab color="accent" (click)="editCriteria(criteria)">
+              <mat-icon>create</mat-icon>
+            </button>
+          </div>
+          <input class="input-icon" [disabled]="disable" type="checkbox" [id]="criteria['@id']" (change)="onChange(criteria['@id'], $event)" [checked]="isInElectionCriteria(criteria)" />
+          <label [for]="criteria['@id']">
+            <i class="icon-criteria {{ criteria.pictogram }}"></i>
+
+            {{ criteria.name }}
+          </label>
+        </div>
+
+        <div class="criteria-add" (click)="createCriteria()">
+          <div class="criteria-center">
+            <i class="icon-general add"></i>
+          </div>
+
+          {{ 'action.add_criteria' | translate }}
+        </div>
+
+        <div *ngIf="form.get('criterias').hasError('count')">
+          <mat-error>{{ 'validator.count_min' | translate:{count: form.get('criterias').errors.count.min} }}</mat-error>
+        </div>
+
+        <div id="form-actions" class="text-right">
+          <button mat-button class="btn btn-bordered" [routerLink]="'/elections/create'">
+            {{ 'action.previous_step' | translate }}
+          </button>
+
+          <button mat-button color="primary" class="btn btn-filled" (click)="save()" [disabled]="form.get('criterias').hasError('count')">
+            {{ 'action.next_step' | translate }}
+          </button>
+        </div>
+      </form>
+    </div>
+    <div class="col-md-12 col-lg-4">
+      <app-help-panel [election]="election">
+        <h3>{{ 'component.choose_criteria.help.title1' | translate }}</h3>
+        <p [innerHTML]="'component.choose_criteria.help.p1' | translate"></p>
+        <img src="assets/images/election/choose_criteria.svg" class="img-fluid" />
+      </app-help-panel>
+    </div>
+  </div>
+</div>
+
+<!--<app-bottom-navigation-bar>-->
+<!--  <button mat-button class="btn btn-bordered" [routerLink]="'/elections/create'">-->
+<!--    {{ 'action.previous_step' | translate }}-->
+<!--  </button>-->
+
+<!--  <button mat-button color="primary" class="btn btn-filled" (click)="save()" [disabled]="form.get('criterias').hasError('count')">-->
+<!--    {{ 'action.next_step' | translate }}-->
+<!--  </button>-->
+<!--</app-bottom-navigation-bar>-->

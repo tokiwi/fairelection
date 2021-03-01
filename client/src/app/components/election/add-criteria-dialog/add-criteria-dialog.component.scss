@@ -1,0 +1,29 @@
+:host {
+  max-width: 500px;
+}
+
+i {
+  display: inline-block;
+  width: 26px;
+}
+
+.add-item {
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 45px;
+    content: attr(data-title);
+  }
+}
+
+.mat-radio-container {
+  display: none !important;
+}
+
+#icons {
+  position: relative;
+
+  > div {
+    color: rgba(0, 0, 0, 0.54);
+  }
+}

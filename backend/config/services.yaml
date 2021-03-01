@@ -1,0 +1,92 @@
+# This file is the entry point to configure your own services.
+# Files in the packages/ subdirectory configure your dependencies.
+
+# Put parameters here that don't need to change on each machine where the app is deployed
+# https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
+parameters:
+    # default application locale
+    locale: 'fr'
+
+    # available locales in the app. Eg. fr|en|de
+    app_locales: fr|de|it
+services:
+    # default configuration for services in *this* file
+    _defaults:
+        autowire: true      # Automatically injects dependencies in your services.
+        autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+        bind:
+            $locales: '%app_locales%'
+            string $defaultLocale: '%locale%'
+            string $endpoint: '%env(string:APP_SOLVER_ENDPOINT)%'
+            string $publicDir: '%kernel.project_dir%/public'
+            string $fromEmail: '%env(string:APP_FROM_EMAIL)%'
+            string $clientUrl: '%env(string:APP_CLIENT_URL)%'
+
+    # makes classes in src/ available to be used as services
+    # this creates a service per class whose id is the fully-qualified class name
+    App\:
+        resource: '../src/'
+        exclude:
+            - '../src/DependencyInjection/'
+            - '../src/Entity/'
+            - '../src/Kernel.php'
+            - '../src/Tests/'
+
+    # controllers are imported separately to make sure services can be injected
+    # as action arguments even if you don't extend any base controller class
+    App\Controller\:
+        resource: '../src/Controller'
+        tags: ['controller.service_arguments']
+
+    App\ApiPlatform\AutoGroupResourceMetadataFactory:
+        decorates: 'api_platform.metadata.resource.metadata_factory'
+        # causes this to decorate around the cached factory so that
+        # our service is never cached (which, of course, can have performance
+        # implications!
+        decoration_priority: -20
+        arguments: [ '@App\ApiPlatform\AutoGroupResourceMetadataFactory.inner' ]
+
+    App\Swagger\SwaggerDecorator:
+        decorates: 'api_platform.swagger.normalizer.api_gateway'
+        arguments: [ '@App\Swagger\SwaggerDecorator.inner' ]
+        autoconfigure: false
+
+    App\Doctrine\EncodeUserPasswordListener:
+        autowire: true
+        tags:
+            - { name: doctrine.event_subscriber, priority: 0 }
+
+    App\Doctrine\AddCriteriaOwnerListener:
+        autowire: true
+        tags:
+            - { name: doctrine.event_listener, event: 'prePersist', lazy: true }
+
+    App\Doctrine\AddElectionOwnerListener:
+        autowire: true
+        tags:
+            - { name: doctrine.event_listener, event: 'prePersist', lazy: true }
+
+    App\Doctrine\CreateAssignmentListener:
+        autowire: true
+        tags:
+            - { name: doctrine.event_listener, event: 'prePersist', lazy: true }
+
+    App\Doctrine\CreateElectionCriteriaListener:
+        autowire: true
+        tags:
+            - { name: doctrine.event_listener, event: 'prePersist', lazy: true }
+
+    App\Serializer\Normalizer\CandidateDenormalizer:
+        arguments:
+            - '@api_platform.serializer.normalizer.item'
+        tags: [ 'serializer.normalizer' ]
+
+    Gedmo\Translatable\TranslatableListener $translatableListener: '@stof_doctrine_extensions.listener.translatable'
+
+    App\EventListener\JWTExpiredListener:
+        tags:
+            - { name: kernel.event_listener, event: lexik_jwt_authentication.on_jwt_expired, method: onJWTExpired }
+
+    App\EventListener\TranslateExceptionListener:
+        tags:
+            - { name: kernel.event_listener, event: kernel.exception }

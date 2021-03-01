@@ -1,0 +1,86 @@
+@import "src/assets/styles/app.colors";
+
+.logo {
+  width: 350px;
+  padding-right: 20px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.mat-toolbar {
+  height: 124px;
+  background: $color-white;
+}
+
+.mat-drawer-container {
+  background: $app-background;
+}
+
+.sidenav-content-inner {
+  padding: 50px 0 0 0;
+}
+
+.progress-bar-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+
+/*
+ * Actual Sticky Footer Styles
+ */
+
+.all-wrap {
+  min-height: 100vh; // same height as browser window height
+}
+
+.page-wrap {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; // same height as browser window height
+}
+
+.content {
+  flex: 1; // child will set to an equal size inside the container
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+
+  // Select all direct descendants only of the <main> element
+  // that are not <router-outlet> elements:
+  //> *:not(router-outlet) {
+  //  display: block;
+  //  flex: 1; // child will set to an equal size inside the container
+  //}
+}
+
+.site-footer {
+  margin-top: 30px;
+
+  .site-wave {
+    width: 100%;
+    height: 233px;
+    margin-bottom: -15px;
+  }
+
+  .site-contact {
+    color: #fff;
+    background-color: $color-green;
+  }
+
+  .site-copyright {
+    margin: 45px auto 0;
+    padding: 30px 0;
+    text-align: center;
+    border-top: 1px solid $color-white;
+
+    a {
+      color: $color-white;
+    }
+  }
+}

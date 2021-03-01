@@ -1,0 +1,11 @@
+// https://material.angular.io/guide/typography
+$custom-typography: mat-typography-config(
+  $font-family: 'Poppins, sans-serif',
+  $headline: mat-typography-level(28px, 42px, 600),
+  $title: mat-typography-level(24px, 38px, 600),
+  $subheading-2: mat-typography-level(16px, 28px, 600),
+  $body-1: mat-typography-level(14px, 24px, 300)
+);
+
+// Override the typography in the core CSS.
+@include mat-core($custom-typography);

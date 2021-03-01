@@ -1,0 +1,200 @@
+@import "src/assets/styles/app.colors";
+
+.result-info-box {
+  padding: 10px;
+  background: $color-white;
+  border-radius: 10px;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+      display: inline-block;
+    }
+  }
+
+  i {
+    margin-right: 10px;
+    font-size: 40px;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+#table-results {
+  &:hover {
+    cursor: move;
+  }
+
+  thead {
+    .table-header-first {
+      th {
+        font-weight: 600;
+        text-align: center;
+
+        &.table-header-candidate-number {
+          text-align: left;
+        }
+      }
+    }
+
+    .table-header-second {
+      th {
+        font-weight: 400;
+        font-size: 12px;
+        text-align: center;
+
+        &.first {
+          padding-left: 20px !important;
+        }
+
+        &.last {
+          padding-right: 20px !important;
+        }
+
+        &.table-header-candidate {
+          min-width: 150px;
+          text-align: left;
+        }
+
+        &.table-header-votes {
+          border-right: 1px solid #000;
+        }
+      }
+    }
+  }
+
+  tfoot {
+    tr {
+      text-align: center;
+
+      td {
+        padding: 10px;
+      }
+    }
+  }
+
+  tbody {
+    tr {
+      text-align: center;
+      border-bottom: 1px solid $color-black;
+
+      &.not-elected {
+        opacity: 0.4;
+      }
+
+      td {
+        padding: 10px;
+
+        &.first {
+          padding-left: 30px !important;
+        }
+
+        &.last {
+          padding-right: 30px !important;
+        }
+
+        .box {
+          width: 32px;
+          height: 32px;
+          margin: 0 auto;
+          padding: 3px;
+          font-size: 9px;
+          border: 1px solid $color-light-grey;
+          border-radius: 5px;
+
+          &.box-filled {
+            color: $color-white;
+            background: transparentize($color-blue, 0.45);
+          }
+        }
+
+        &.table-cell-candidate {
+          padding: 10px 15px 10px 10px;
+          font-weight: 600;
+          text-align: left;
+
+          h2 {
+            margin: 0;
+            overflow: hidden;
+            font-size: 18px;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+          }
+        }
+
+        &.table-cell-elected,
+        &.table-cell-votes {
+          padding: 10px 30px;
+          font-weight: 500;
+        }
+
+        &.table-cell-votes {
+          border-right: 1px solid #000;
+        }
+
+        &.criteria-name {
+          width: 160px;
+          min-width: 160px;
+          max-width: 190px;
+
+          h2 {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+          }
+        }
+
+        .tick {
+          width: 30px;
+          height: 30px;
+          margin-bottom: 2px;
+          color: $color-red;
+          font-weight: 600;
+          font-size: 16px;
+          line-height: 33px;
+          text-align: center;
+          background: $color-white;
+          border: 1px solid $color-red;
+          border-radius: 50%;
+
+          i {
+            &::before {
+              color: $color-red;
+            }
+          }
+
+          &.tick-green {
+            border-color: $color-green;
+
+            i {
+              &::before {
+                color: $color-green;
+              }
+            }
+          }
+        }
+      }
+
+      & > table {
+        margin: 0 20px;
+
+        tr {
+          border: none;
+
+          td {
+            padding: 0 5px;
+          }
+        }
+      }
+
+      &:nth-child(even) {
+        background: darken($color-light-blue, 6%);
+      }
+    }
+  }
+}

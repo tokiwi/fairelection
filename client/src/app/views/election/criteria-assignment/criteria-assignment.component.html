@@ -1,0 +1,86 @@
+<app-stepper [activeSteps]="[1, 2]" [election]="election" class="d-none d-lg-block"></app-stepper>
+
+<div class="container">
+  <div class="row">
+
+    <div class="col-sm-12 col-lg-8 main mb-6">
+      <form [formGroup]="form" >
+        <h4 class="mb-0">{{ election.name }}</h4>
+        <h1>{{ 'component.criteria_assignment.title1' | translate }}</h1>
+        <h3 class="mb-0">{{ 'component.criteria_assignment.title2' | translate }}</h3>
+
+        <div class="row">
+          <div class="col-lg-7">
+            <mat-form-field appearance="outline">
+              <mat-label>{{ 'word.number_of_people_to_elect' | translate }}</mat-label>
+              <input matInput type="number" formControlName="numberOfPeopleToElect" autocomplete="off" min="0">
+              <mat-error *ngIf="form.get('numberOfPeopleToElect').hasError('required')">
+                {{ 'validator.field.required' | translate }}
+              </mat-error>
+              <mat-error *ngIf="form.get('numberOfPeopleToElect').hasError('maxlength')">
+                {{ 'validator.field.too_long' | translate: { max: this.form.get('name').errors.maxlength.requiredLength} }}
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <section id="sliders" [class.disabled]="numberOfPeopleToElect <= 0">
+          <div class="overlay"></div>
+
+          <h3 class="mb-0">{{ 'component.criteria_assignment.title3' | translate }}</h3>
+          <p>{{ 'component.criteria_assignment.p1' | translate }}</p>
+          <p>{{ 'component.criteria_assignment.p2' | translate }}</p>
+
+          <div id="criterias">
+            <drag-scroll class="criterias-slider" [style]="{height: carouselHeight + 'px'}"
+                         [drag-scroll-disabled]="true"
+                         scrollbar-hidden="true"
+                         (reachesLeftBound)="leftBoundStat($event)"
+                         (reachesRightBound)="rightBoundStat($event)"
+                         #criterias>
+              <div drag-scroll-item class="item d-inline-flex" *ngFor="let electionCriteria of election.electionCriterias">
+                <app-criteria-percent-assignment [electionCriteria]="electionCriteria" [map]="map" [numberOfPeopleToElect]="numberOfPeopleToElect"></app-criteria-percent-assignment>
+              </div>
+            </drag-scroll>
+
+            <nav>
+              <div class="nav-left">
+                <button class="move-left" mat-mini-fab (click)="moveLeft()" [disabled]="leftNavDisabled">
+                  <i class="icon-general right-arrow"></i>
+                </button>
+              </div>
+
+              <div class="nav-right">
+                <button class="move-right" mat-mini-fab (click)="moveRight()" [disabled]="rightNavDisabled">
+                  <i class="icon-general left-arrow"></i>
+                </button>
+              </div>
+            </nav>
+          </div>
+
+          <div id="form-actions" class="text-right">
+            <button mat-button class="btn btn-bordered" [routerLink]="election['@id'] + '/criterias'">
+              {{ 'action.previous_step' | translate }}
+            </button>
+
+            <button mat-button color="primary" class="btn btn-filled" (click)="save()" appMatButtonLoading="" [loading]="loading">
+              {{ 'action.next_step' | translate }}
+            </button>
+          </div>
+        </section>
+      </form>
+    </div>
+
+    <div class="col-md-12 col-lg-4">
+      <app-help-panel [election]="election">
+        <h3>{{ 'component.criteria_assignment.help.title1' | translate }}</h3>
+        <p [innerHTML]="'component.criteria_assignment.help.p1' | translate"></p>
+        <p [innerHTML]="'component.criteria_assignment.help.p2' | translate"></p>
+        <p [innerHTML]="'component.criteria_assignment.help.p3' | translate"></p>
+
+
+        <img src="assets/images/election/criteria_assignment.svg" class="img-fluid" alt="" />
+      </app-help-panel>
+    </div>
+  </div>
+</div>

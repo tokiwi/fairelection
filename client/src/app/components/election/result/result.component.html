@@ -1,0 +1,78 @@
+<div *ngIf="true === (loading$ | async)">
+  <mat-spinner color="accent" diameter="30"></mat-spinner>
+</div>
+
+<div class="table-responsive" *ngIf="false === (loading$ | async)">
+  <ng-container *ngFor="let resultResource of resultResources | slice:0:1; let index = index">
+    <div class="d-flex justify-content-start mb-3">
+      <div class="result-info-box mr-2" *ngFor="let stat of stats | keyvalue">
+        <div class="d-flex justify-content-start align-items-center h-100">
+          <div>
+            <i class="icon-criteria {{ stat.key }}"></i>
+          </div>
+          <div>
+              <ng-container *ngFor="let item of stat.value | keyvalue; let last = last">
+                <span *ngIf="0 < item.value">
+                  <strong>{{  item.value }}</strong> {{ item.value | i18nPlural:messageMapping | translate | lowercase }} <span class="font-italic">{{ item.key | lowercase }}</span> <br *ngIf="!last" />
+                </span>
+              </ng-container>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+
+  <drag-scroll class="criterias-slider" style="height: 100%;">
+    <table id="table-results" class="w-100s sticky-header ">
+      <ng-container *ngFor="let resultResource of resultResources | slice:0:1; let index = index">
+        <thead>
+        <tr class="table-header-first">
+          <th class="table-header-candidate-number" colspan="4">{{ 'component.results.title2' | translate:{number: election.numberOfPeopleToElect} }}</th>
+          <th [colSpan]="criteria.choices.length" *ngFor="let criteria of resultResource.criterias">
+            {{ criteria.name }}
+          </th>
+        </tr>
+        <tr class="table-header-second" >
+          <th class="table-header-candidate" colspan="2">{{ 'title.name_or_candidate_number' | translate }}</th>
+          <th class="table-header-elected">{{ 'word.elected' | translate }}</th>
+          <th class="table-header-votes">{{ 'word.votes' | translate }}</th>
+
+          <ng-container *ngFor="let criteria of resultResource.criterias">
+            <th *ngFor="let choice of criteria.choices; let first = first; let last = last;" [class.first]="first" [class.last]="last" [matTooltip]="choice.name">
+              {{ choice.acronym }}
+            </th>
+          </ng-container>
+        </tr>
+        </thead>
+      </ng-container>
+      <tbody>
+      <tr *ngFor="let resultResource of resultResources; let index = index" [class.not-elected]="!resultResource.isElected">
+        <td>{{ index + 1 }}</td>
+        <td class="table-cell-candidate">
+          <h2>{{ resultResource.candidate }}</h2>
+        </td>
+        <td class="table-cell-elected">
+          <div class="tick tick-green" [class.tick-green]="resultResource.isElected">
+            <i class="icon-general checked" [class.checked]="resultResource.isElected" [class.close]="!resultResource.isElected"></i>
+          </div>
+        </td>
+        <td class="table-cell-votes">
+          {{ resultResource.votes }}
+        </td>
+        <ng-container *ngFor="let criteria of resultResource.criterias">
+          <td *ngFor="let choice of criteria.choices; let first = first; let last = last;" [class.first]="first" [class.last]="last">
+            <div class="box" [class.box-filled]="choice.isSelected">{{ choice.isSelected ? choice.acronym : '' }}</div>
+          </td>
+        </ng-container>
+      </tr>
+      </tbody>
+      <tfoot>
+      <tr>
+        <td class="text-left" colspan="3">{{ 'word.total' | translate }}</td>
+        <td>{{ totalNumberOfVotes }}</td>
+      </tr>
+      </tfoot>
+    </table>
+  </drag-scroll>
+
+</div>

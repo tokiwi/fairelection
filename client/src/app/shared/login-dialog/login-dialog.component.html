@@ -1,0 +1,51 @@
+<h2 mat-dialog-title>{{ 'title.login' | translate }}</h2>
+<form [formGroup]="form">
+
+  <mat-dialog-content class="mat-typography">
+    <div class="row">
+      <div class="col-md-12">
+        <mat-form-field>
+          <mat-label>{{ 'word.email' | translate }}</mat-label>
+          <input matInput formControlName="email">
+          <mat-error *ngIf="form.get('email').hasError('required')">
+            {{ 'validator.field.required' | translate }}
+          </mat-error>
+          <mat-error *ngIf="form.get('email').hasError('email')">
+            {{ 'validator.field.email' | translate }}
+          </mat-error>
+          <mat-error *ngIf="form.get('email').hasError('maxlength')">
+            {{ 'validator.field.too_long' | translate: { max: this.form.get('email').errors.maxlength.requiredLength} }}
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <mat-form-field>
+          <mat-label>{{ 'word.password' | translate }}</mat-label>
+          <input matInput [type]="this.hidePassword ? 'password' : 'text'" formControlName="password">
+          <button (click)="this.hidePassword = !this.hidePassword" mat-icon-button matSuffix type="button">
+            <mat-icon>
+              {{ this.hidePassword ? 'visibility_off' : 'visibility' }}
+            </mat-icon>
+          </button>
+          <mat-error *ngIf="form.get('password').hasError('required')">
+            {{ 'validator.field.required' | translate }}
+          </mat-error>
+          <mat-error *ngIf="form.get('password').hasError('maxlength')">
+            {{ 'validator.field.too_long' | translate: { max: this.form.get('password').errors.maxlength.requiredLength} }}
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+    <p>{{ 'component.login_dialog.no_account_yet' | translate }} <span class="link" (click)="register()">{{ 'action.register' | translate }}</span>.</p>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-button class="btn btn-bordered btn-xs" [mat-dialog-close]="false">{{ 'action.cancel' | translate }}</button>
+
+    <button mat-button class="btn btn-filled btn-xs" (click)="login()" appMatButtonLoading [loading]="loading">
+      {{ 'action.login' | translate }}
+    </button>
+
+  </mat-dialog-actions>
+</form>

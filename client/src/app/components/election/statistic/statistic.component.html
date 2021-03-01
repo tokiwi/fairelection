@@ -1,0 +1,74 @@
+<div class="table-responsive">
+  <table id="table-statistics" class="table w-100 mat-elevation-z2">
+    <thead>
+    <tr>
+      <th>{{ 'word.criteria' | translate }}</th>
+      <th>{{ 'word.category' | translate }}</th>
+      <th></th>
+      <th>
+        <div class="legend" *ngIf="!electedOnly">
+          <span class="red"></span>
+          {{ 'word.insufficient' | translate }}
+        </div>
+
+        <div class="legend">
+          <span class="green"></span>
+          {{ 'word.sufficient' | translate }}
+        </div>
+
+        <div class="legend">
+          <span class="dark-grey"></span>
+          {{ 'word.number' | translate }}
+        </div>
+      </th>
+      <th>{{ 'word.candidate_percent' | translate }}</th>
+    </tr>
+    </thead>
+    <tbody>
+    <ng-container *ngFor="let statistic of statisticResources">
+      <tr>
+        <td class="criteria-name">
+          <div class="criteria-icon">
+            <i class="icon-criteria {{ statistic.categoryPictogram }}"></i>
+          </div>
+          <h2>{{ statistic.categoryName }}</h2>
+        </td>
+        <td class="criteria-item">
+          <span *ngFor="let item of statistic.items; let last = last">
+            {{ item.category }} <br *ngIf="!last" />
+          </span>
+        </td>
+        <td class="criteria-tick">
+          <div *ngFor="let item of statistic.items; let last = last" class="tick" [class.tick-green]="item.sufficient">
+            <i class="icon-general checked" [class.checked]="item.sufficient" [class.close]="!item.sufficient"></i>
+          </div>
+        </td>
+        <td class="criteria-bars">
+          <ul class="bargraph">
+            <li *ngFor="let item of statistic.items; let last = last">
+              <ul>
+                <li [style]="{width: item.red + '%'}" class="bar-red" [class.checked]="item.sufficient"></li>
+                <li [style]="{width: item.green + '%'}" class="bar-green"></li>
+              </ul>
+              <span class="inner mat-elevation-z0" [attr.data-percent]="item.candidateNumber" [style]="{width: item.percent + '%', content: item.candidateNumber}"></span>
+            </li>
+          </ul>
+        </td>
+        <td class="criteria-percent">
+          <span *ngFor="let item of statistic.items; let last = last">
+            {{ item.percent }} % <br *ngIf="!last" />
+          </span>
+        </td>
+      </tr>
+      <tr class="errors" *ngIf="statistic.errors">
+        <td colspan="5">
+          {{ 'message.conditions_are_not_met' | translate }}
+
+          <button mat-button color="primary" class="btn btn-error btn-xs" [routerLink]="election['@id'] + '/assignments'">{{ 'action.modify_criterias' | translate }}</button>
+          <button mat-button color="primary" class="btn btn-error btn-xs" [routerLink]="election['@id'] + '/candidates'">{{ 'action.modify_candidates' | translate }}</button>
+        </td>
+      </tr>
+    </ng-container>
+    </tbody>
+  </table>
+</div>

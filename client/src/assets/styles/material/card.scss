@@ -1,0 +1,15 @@
+@import "../app.colors";
+
+.mat-card {
+  padding: 23px !important;
+  border-radius: 50px !important;
+}
+
+.mat-card-header {
+  margin-bottom: 10px;
+
+  .mat-card-title {
+    font-weight: 600;
+    font-size: 26px;
+  }
+}

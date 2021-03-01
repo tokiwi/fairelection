@@ -1,0 +1,8 @@
+monolog:
+    handlers:
+        app:
+            type: stream
+            path: "%kernel.logs_dir%/%kernel.environment%.app.log"
+            level: debug
+            channels: [app]
+    channels: ['app']

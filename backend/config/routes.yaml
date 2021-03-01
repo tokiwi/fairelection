@@ -1,0 +1,3 @@
+authenticate:
+  path: /authenticate
+  methods: ['POST']

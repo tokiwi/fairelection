@@ -1,0 +1,32 @@
+<div class="container">
+  <h1>FAQ</h1>
+
+  <mat-expansion-panel hideToggle expanded="true">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{ 'component.faq.title1' | translate }}
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <p [innerHTML]="'component.faq.p1' | translate"></p>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel hideToggle>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{ 'component.faq.title2' | translate }}
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <p [innerHTML]="'component.faq.p2' | translate"></p>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel hideToggle>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{ 'component.faq.title3' | translate }}
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <p [innerHTML]="'component.faq.p3' | translate"></p>
+  </mat-expansion-panel>
+
+</div>
+
