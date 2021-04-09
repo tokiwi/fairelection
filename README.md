@@ -5,6 +5,14 @@ Solver
 
 This part of FairElection is responsible to solve "mathematically" the linear equation. It takes as input the different criteria set by the user and gives the best solution.
 
+Backend
+
+This part of FairElection is responsible for business logic. It manages the user profiles, the election instances, the citeria and the business flow.
+
+Client
+
+This part of FairElection is responsible to display the user interface.
+
 Open Source
 
 FairElection is open source!
