@@ -7,14 +7,6 @@ Secondly, these chosen criteria are applied during an internal selection process
 
 This way, the winning group of candidates will be satisfying the criteria chosen by the user, while respecting the democratic choice of members. The algorithm provides a mathematical guarantee that the winning group is the one that obtains the most votes while respecting the criteria.
 
-The mathematical method was developed together with the EPFL for the primary of the “Appel Citoyen” movement in Valais in 2018. This approach has been the subject of several academic contributions, underlining its character as a technological novelty with a high potential for disruption. This short movie explains the way the algorithm works.
-
-This tool offers a solution to the following challenges:
-
-It offers parties and organisations a tool to bring transparency and trust into the selection process of candidates. The discussion on criteria of representation is distinct from the nominal choice of candidates, which allows for quality participation: first the criteria, second the people.
-It offers party members, party supporters and the general public (if the party holds open primaries), the opportunity to choose a fair representation and determine the desired criteria. The discussion on representation becomes a public discussion, thus contributing to stronger legitimacy of candidate lists and party elections.
-By making the implementation of representation choices easier and more transparent, the tool contributes to equal opportunities in politics. Candidates from under-represented groups have a better chance of being nominated as candidates.
-
 The platform FairElection is available here : https://fairelection.ch
 
 ## Solver
