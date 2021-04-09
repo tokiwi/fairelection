@@ -1,46 +1,22 @@
-# FairElectionClient
+# FairElection client setup
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.0.
+**1) Download dependencies**
 
-## Development server
+Make sure you have [Angular CLI](https://angular.io/cli)
+and then run:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+```
+npm install
+```
 
-## Code scaffolding
+**2) Build and serve the app**
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+To start the web server, open a terminal, move into the
+project, and run:
 
-## Build
+```
+ng serve
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
-
-
-{
-	"numberOfPeopleToElect": 1,
-	"electionCriterias":[
-		{
-			"@id": "/election_criterias/01EWJ0SHEQ1AMTMEBT914G4WV2",
-			"assignments": [
-				{
-					"@id": "/assignments/01EWJ0SHFEHABTHS2MC9TWPAQT",
-					"percent": 50
-				}, {
-					"@id": "/assignments/01EWJ0SHFEHABTHS2MC9TWPAQX",
-					"percent": 20
-				}		
-			]
-		}	
-	]
-}
+In your browser, open http://localhost:4200/ to see the new app run. You may have to adapt the
+apiUrl configuration in **environments/environment.ts** to the url served by **symfony serve** command.

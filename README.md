@@ -21,6 +21,14 @@ This part of FairElection is responsible for business logic. It manages the user
 
 This part of FairElection is responsible to display the user interface.
 
+## Setup
+
+To get it working, follow these steps:
+
+[Backend setup](./backend/README.md)
+
+[Client setup](./client/README.md)
+
 ## Open Source
 
 FairElection is open source!
