@@ -1,7 +1,7 @@
 # FairElection
 FairElection creates a tool for political organisations, civil society organisations and companies to select candidates according to their self-chosen criteria of diversity/representation. In addition, everyone can use the tool to simulate the results of the latest National Council elections (2019) by modifying these same diversity criteria.
 
-FairElection is available in production on : https://fairelection.ch
+The platform FairElection is available here : https://fairelection.ch
 
 ## Solver
 
