@@ -1,0 +1,3 @@
+[submodule "simulation-fairelection"]
+	path = simulation-fairelection
+	url = https://framagit.org/vanhulstp/simulation-fairelection
