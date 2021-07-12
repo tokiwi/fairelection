@@ -199,7 +199,8 @@
     "login": "Connexion",
     "my_elections": "Mes élections",
     "new_election": "Nouvelle élection",
-    "register": "Inscription"
+    "register": "Inscription",
+    "simulation": "Simulation scénario"
   },
   "message": {
     "conditions_are_not_met": "Les conditions ne sont pas toutes respectées pour ce critère.",

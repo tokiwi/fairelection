@@ -40,6 +40,14 @@
           </mat-list-item>
         </ng-container>
 
+        <mat-divider></mat-divider>
+
+        <mat-list-item (click)="redirectToSimulation()">
+          <button>
+            {{ 'menu.simulation' | translate }}
+          </button>
+        </mat-list-item>
+
       </mat-action-list>
 
       <div class="footer px-2 mb-4 text-center">
