@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="fr" target-language="en" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="VI39LuK" resname="reset_password_request.title">
+        <source>reset_password_request.title</source>
+        <target>Reset password</target>
+      </trans-unit>
+      <trans-unit id="DvCk_5g" resname="email_footer">
+        <source>email_footer</source>
+        <target><![CDATA[You recently requested to reset your password for your FairElection account. Use the link below to reset it. <strong>This password reset is only valid for 1 hour</strong>.]]></target>
+      </trans-unit>
+      <trans-unit id="bX0sn1e" resname="reset_password_request.paragraph0">
+        <source>reset_password_request.paragraph0</source>
+        <target>Reset my password</target>
+      </trans-unit>
+      <trans-unit id="SYoslFG" resname="reset_password_request.link">
+        <source>reset_password_request.link</source>
+        <target><![CDATA[For any questions, please contact us at the following address <a href="mailto:info@fairelection.ch">info@fairelection.ch</a>]]></target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

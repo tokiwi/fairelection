@@ -8,7 +8,7 @@ parameters:
     locale: 'fr'
 
     # available locales in the app. Eg. fr|en|de
-    app_locales: fr|de|it
+    app_locales: fr|de|en
 services:
     # default configuration for services in *this* file
     _defaults:

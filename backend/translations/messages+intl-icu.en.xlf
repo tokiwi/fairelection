@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="fr" target-language="en" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="2jlNcLc" resname="message.jwt_expired">
+        <source>message.jwt_expired</source>
+        <target>Your session has expired. Please log back in.</target>
+      </trans-unit>
+      <trans-unit id="19ofYRS" resname="word.name_or_candidate_number">
+        <source>word.name_or_candidate_number</source>
+        <target>Name or number of candidates</target>
+      </trans-unit>
+      <trans-unit id="Bv9h9_y" resname="The fair election algorithm could not return results for these criteria.">
+        <source>The fair election algorithm could not return results for these criteria.</source>
+        <target>The fair election algorithm could not return results for these criteria.</target>
+      </trans-unit>
+      <trans-unit id="pWi9w22" resname="word.votes">
+        <source>word.votes</source>
+        <target>Votes</target>
+      </trans-unit>
+      <trans-unit id="lLFrRyF" resname="word.candidate_example">
+        <source>word.candidate_example</source>
+        <target>Candidate example (to be deleted afterwards)</target>
+      </trans-unit>
+      <trans-unit id="cZWZtAC" resname="word.error">
+        <source>word.error</source>
+        <target>Error</target>
+      </trans-unit>
+      <trans-unit id="YDiu_bB" resname="message.only_x_allowed">
+        <source>message.only_x_allowed</source>
+        <target>Enter 'X' in the appropriate box for this person, and leave the other boxes blank</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

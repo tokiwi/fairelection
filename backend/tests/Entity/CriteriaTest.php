@@ -13,6 +13,7 @@ use App\Factory\CriteriaFactory;
 use App\Factory\UserFactory;
 use App\Tests\CustomApiTestCase;
 use Symfony\Component\HttpFoundation\Response;
+use Zenstruck\Foundry\Proxy;
 
 class CriteriaTest extends CustomApiTestCase
 {
@@ -181,7 +182,8 @@ class CriteriaTest extends CustomApiTestCase
             'email' => 'john.doe@gmail.com',
         ]);
 
-        CriteriaFactory::new()->create([
+        /** @var Proxy $criteria */
+        $criteria = CriteriaFactory::new()->create([
             'ulid' => '01EVXSWVFEW54FJA7H15ZKN0R0',
             'name' => 'GenDDer', // typo in name
             'user' => $user,
@@ -205,12 +207,9 @@ class CriteriaTest extends CustomApiTestCase
             ],
         ]);
 
-        CriteriaFactory::repository()->assertNotExists([
-            'name' => 'GenDDer',
-        ]);
-        CriteriaFactory::repository()->assertExists([
-            'name' => 'Gender',
-        ]);
+        $criteria->refresh();
+        $this->assertSame('Gender', $criteria->getName()); // @phpstan-ignore-line
+        $this->assertNotSame('GenDDer', $criteria->getName()); // @phpstan-ignore-line
 
         self::assertResponseStatusCodeSame(Response::HTTP_OK);
     }
