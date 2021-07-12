@@ -199,7 +199,8 @@
     "login": "Login",
     "my_elections": "My Elections",
     "new_election": "New Election",
-    "register": "Register"
+    "register": "Register",
+    "simulation": "Simulating Scenarios"
   },
   "message": {
     "conditions_are_not_met": "The conditions have not all been met for this criterion.",

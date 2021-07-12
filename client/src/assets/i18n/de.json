@@ -199,7 +199,8 @@
     "login": "Anmelden",
     "my_elections": "Meine Wahlen",
     "new_election": "Neue Wahl",
-    "register": "Registrieren"
+    "register": "Registrieren",
+    "simulation": "Simulationsszenario"
   },
   "message": {
     "conditions_are_not_met": "Bei diesem Kriterium sind nicht alle Bedingungen erfüllt.",

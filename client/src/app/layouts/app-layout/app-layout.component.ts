@@ -64,4 +64,8 @@ export class AppLayoutComponent implements OnInit {
         this.authService.logout();
         void this.router.navigateByUrl('/');
     }
+
+    public redirectToSimulation(): void {
+        window.location.href = 'https://simulation.fairelection.ch';
+    }
 }
