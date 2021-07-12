@@ -8,7 +8,8 @@ import { BehaviorSubject } from 'rxjs';
 export class I18nService {
     public static languages: Array<{locale: string; name: string}> = [
         {locale: 'fr-ch', name: 'word.fr'},
-        {locale: 'de', name: 'word.de'}
+        {locale: 'de', name: 'word.de'},
+        {locale: 'en', name: 'word.en'},
     ];
 
     public defaultLang = environment.defaultLang;

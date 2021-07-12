@@ -12,9 +12,12 @@ namespace App\Tests;
 use ApiPlatform\Core\Bridge\Symfony\Bundle\Test\ApiTestCase;
 use ApiPlatform\Core\Bridge\Symfony\Bundle\Test\Client;
 use Symfony\Component\HttpFoundation\Response;
+use Zenstruck\Foundry\Test\Factories;
 
 class CustomApiTestCase extends ApiTestCase
 {
+    use Factories;
+
     /**
      * Authenticate a given user, and use the authentication token to
      * authenticate subsequent requests.

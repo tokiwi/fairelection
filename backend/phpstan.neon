@@ -10,7 +10,6 @@ parameters:
     checkGenericClassInNonGenericObjectType: false
     ignoreErrors:
         - '#Call to an undefined method [a-zA-Z0-9\\|_]+::assertExists\(\)#'
-        - '#Call to an undefined method [a-zA-Z0-9\\|_]+::assertNotExists\(\)#'
 #        - '#Call to an undefined method [a-zA-Z0-9\\|_]+::assertCountGreaterThanOrEqual\(\)#'
     banned_code:
         nodes:

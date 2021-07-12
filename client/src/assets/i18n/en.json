@@ -1,0 +1,271 @@
+{
+  "action": {
+    "add_candidate": "Add Candidate",
+    "add_category": "Add Category",
+    "add_criteria": "Add Personalized Criteria",
+    "add_election": "Add an Election",
+    "back": "Back",
+    "cancel": "Cancel",
+    "create_election": "Create an Election",
+    "delete": "Delete",
+    "download_model": "FairElection Model",
+    "end_election": "End Election",
+    "import_from_excel": "Import a List from Excel",
+    "import_model": "Import a Model",
+    "login": "Login",
+    "logout": "Logout",
+    "modify_candidates": "Modify Candidate",
+    "modify_criterias": "Modify Criteria",
+    "next_step": "Next Step",
+    "previous_step": "Previous Step",
+    "recover": "Recover",
+    "reduce_criteria": "Reduce Criteria",
+    "register": "Register",
+    "save": "Save",
+    "see_results": "Results",
+    "see_simulation": "See Simulation",
+    "start": "Start",
+    "try_fair_election": "Try FairElection"
+  },
+  "component": {
+    "add_criteria_dialog": {
+      "p1": "Enter the criterion's possible categories below. Each candidate may be sorted into one, and only one category. E.g. For the criterion « Gender », the categories « Male », « Female », and « Other » can be provided."
+    },
+    "candidates": {
+      "help.p1": "- You can list the candidates here directly <br />- Or you can generate the list of candidates with Excel.<br />To do this, download the FairElection-Excel-Spreadsheet with the corresponding structure. Do not change the structure of this file, as it will be needed for the next steps.",
+      "help.p2": "You may anonymize the list, E.g. by using pseudonyms or numbers to represent candidates.",
+      "help.title1": "Enter list of candidates.",
+      "p1": "You can now create a list of your candidates or import a list from an Excel template.",
+      "title1": "Your Candidates"
+    },
+    "choose_criteria": {
+      "help.p1": "Make sure to choose clear and transparent criteria.<br /><br />Criteria must be clear: Each candidate must correspond to one and only one possible category.<br /><br />Criteria must be transparent : information must be verifiable.<br /><br />Example: If you choose income as a criterion, it must be possible to classify applicants according to this criterion. All candidates must be assigned to one and only one income class (clear criterion). Candidates should communicate their income transparently (transparency criterion).",
+      "help.title1": "How are the criteria chosen ?",
+      "p1": "The people who are chosen should represent your organisation's diversity. What are your goals in terms of representation? Choose from the predefined criteria or propose a new criterion.",
+      "title1": "Choosing Criteria"
+    },
+    "create_election": {
+      "p1": "<strong>Set your objectives</strong> in the form of representation criteria.",
+      "p2": "<strong>Enter your candidates</strong> and evaluate how well they meet your objectives.",
+      "p3": "<strong>Apply the selected criteria,</strong> thanks to the FairElection algorithm.",
+      "title1": "Creating an Electoral List"
+    },
+    "criteria_assignment": {
+      "help.p1": "1. First, set the total number of people that are to stand for election. If you are organizing a primary election to create an electoral list, specify the number of available seats on the list.",
+      "help.p2": "2. Then define the possible categories for which you want to reserve seats under each criterion (E.g. For the criterion « Gender » the categories « Female », « Male », « Other »).",
+      "help.p3": "3. Select how many seats you want to reserve for each category. These are lower limits, i.e. the minimum number of items that a valid list must adhere to. The lower the limit you set, the more flexibility you will have in applying these criteria.",
+      "help.title1": "In this step you will have to define your criteria more precisely.",
+      "p1": "You can choose your own categories for each criterion.",
+      "p2": "You can set the minimum number of reserved seats.",
+      "title1": "Setting the criteria",
+      "title2": "Define how many people are to stand for election.",
+      "title3": "Define your criteria precisely."
+    },
+    "elections": {
+      "no_election": "You have not yet generated an election.",
+      "title1": "My Elections"
+    },
+    "faq": {
+      "p1": "The algorithm developed by the team around Elisa Celis and Nisheeth K. Vishnoi (currently Yale) is based on linear programming. This approach makes it possible to determine the list of winners while taking into account both preselected criteria and the raw results of an election. To use an analogy, we can picture each possible list in our problem as a point on a relief map. The optimal solution that the algorithm seeks is the point that is situated highest. With the help of linear programming, instead of examining each point individually (which would be too time consuming), we will take a step back, discern the overall geometry of the scope of possibilities in question, mark the highest regions, and only then begin our investigation, focusing only on these points. In this way, after a few attempts, we will identify the highest point. This method enjoys the decisive advantage of mathematically guaranteeing that the recommended solution is indeed the best one. The scientific publication describing this approach is available here",
+      "p2": "The FairElection tool can be used completely anonymously. Simply replace the names of the candidates with numbers. As a general rule, no data is passed on to third parties.",
+      "p3": "FairElection is not an E-Voting tool. It is compatible with different election formats (online or in physical poll).",
+      "title0": "FAQ",
+      "title1": "FairElection Algorithm",
+      "title2": "Will the personal data of candidates be passed on to third parties ?",
+      "title3": "How does FairElection solve E-Voting-Problems ?"
+    },
+    "home": {
+      "p1": "Elections serve the purpose of choosing individuals to represent you. But how does one go about choosing one's representatives ?",
+      "p10": "You don't need to install any software. The tool can be used directly on this website.",
+      "p11": "An algorithm developed by a team of international data-scientists.",
+      "p12": "A risk-free tool that respects your data.",
+      "p13": "A political innovation that advances democracy .",
+      "p14": "Want to know how FairElection works? Here is a simplified example of what you can do with the FairElection list generator. Give a scenario a try by shifting the sliders.",
+      "p2": "Our FairElection tool supports you in this process.  This innovation, developed in Switzerland, will help you organise your elections, as well as select the most suitable candidates.",
+      "p3": "You want to hold elections within your organisation: a political party primary, putting together an electoral list, electing a committee ? You want the people selected to form a representative group that reflects the diversity of your organisation ?",
+      "p4": "FairElection's tool supports you in this process. First of all, it helps you visualise what a \"representative group\" actually means. What are the most important criteria of representation ? It also offers you a way to organise the election by guaranteeing adherence to the selected criteria. FairElection supports you at every step of this process in order to ensure transparent proceedings and outcomes.",
+      "p5": "-in the form of representation criteria",
+      "p6": "Assess how well these candidacies meet your targets",
+      "p7": "Through the FairElection algorithm",
+      "p8": "A tool for ensuring that lists are representative of your members",
+      "p9": "A fresh approach to elections that encourages new candidacies",
+      "title1": "Enabling Diversity",
+      "title10": "Efficient Algorithm",
+      "title11": "Data-Privacy and Security",
+      "title12": "Swiss Innovation",
+      "title13": "Simulating Scenarios",
+      "title14": "Partners",
+      "title15": "Are you ready to create a list with better representation ?",
+      "title2": "How Does it Work ?",
+      "title3": "Set Your Targets",
+      "title4": "Enter Your Candidates",
+      "title5": "Apply Your Criteria",
+      "title6": "Your Advantages",
+      "title7": "Transparency and Legitimacy",
+      "title8": "Promote New Talent",
+      "title9": "Simple and Intuitive Operation"
+    },
+    "import_candidate_dialog": {
+      "p1": "1. To download the Excel template, click the button below.",
+      "p2": "2. Fill out the template and then click on the « Import Template » button in order to add your candidates.",
+      "p3": "Candidates already entered on this page will be replaced by the imported Excel list.",
+      "title1": "Import From an Excel Template"
+    },
+    "import_vote_dialog": {
+      "p1": "1. Download the Excel template by clicking the button below.",
+      "p2": "2. Fill out the template and then click on the « Import Template » button in order to add the number of votes.",
+      "p3": "Votes already entered on this page will be replaced by the imported Excel list.",
+      "title1": "Import From an Excel Template"
+    },
+    "login": {
+      "title1": "Login"
+    },
+    "login_dialog": {
+      "no_account_yet": "Don't have an account yet ?"
+    },
+    "register": {
+      "title1": "Register"
+    },
+    "reset_password": {
+      "title1": "New Password"
+    },
+    "reset_password_request": {
+      "title1": "Reset Password"
+    },
+    "results": {
+      "help.p1": "Help",
+      "help.p2": "Here you will find the list of the elected candidates. This list adheres to both the selected criteria and the results of the election. Unsuccessful candidates are displayed in light gray..",
+      "help.title1": "Results",
+      "p1": "Congratulations, the election is over. If you enjoyed using FairElection then please share it with your network. We welcome any feedback and suggestions on how to improve our service.  Please don't hesitate to <a href=\"mailto:info@fairelection.ch\"> reach out</a> !",
+      "title1": "Mission Accomplished ! ",
+      "title2": "Election Results",
+      "title3": "Statistics and Overview"
+    },
+    "solve": {
+      "p1": "The FairElection algorithm applies the criteria you select to the list of results. The list of selected candidates is made available to you in a matter of seconds. This algorithm was developed by a team of international researchers at Yale. ",
+      "p2": "No results are possible for this list of candidates and criteria. Please reduce the number of criteria in order to allow for a result.",
+      "title1": "Create Your List",
+      "title2": "No Result Possible."
+    },
+    "statistics": {
+      "help.p1": "Ways to improve your candidate list ? \nIn order to ensure a meaningful selection and avoid the tacit election of certain individuals, you can try to improve the diversity of your candidate list. Try to increase the number of candidates in the categories that are least well represented.",
+      "help.p2": " Explain the approach you are taking with FairElection and your desire to elect representative and diverse individuals through explicit criteria. Evidence has shown that candidates feel that they are taken more seriously and are more motivated to try their luck.",
+      "help.title1": "Statistics",
+      "p1": "Here you will find an analysis of your candidates' pool. You can check whether your targets of representation are achievable with the current pool of candidates.",
+      "p2": "No result is possible for this combination of candidates and criteria. Please change your criteria or increase the number of individuals standing for election. ",
+      "title1": "Statistics and Overview"
+    },
+    "votes": {
+      "help.p1": "FairElection is compatible with all election procedures: online or physical poll, elections open to all members of an organisation, elections by boards of directors, decisions by a general assembly. If you cannot or do not want to perform an election, you can enter a proxy-number between 1 and 20 for each candidate. This number corresponds to your estimated voter turnout for each candidate.",
+      "help.p2": "All methods of election are compatible with FairElection: Elections open to all members of an organisation, elections by boards of directors, decisions of a general assembly, ... Thanks to the FairElection-Algorithm, selected criteria are applied to the raw results of these electoral methods.",
+      "help.title1": "Organise an Online Election",
+      "p1": "For the next step you will need only the result of this election: A list with the number of votes that each candidate received.",
+      "title1": "Allocation of Votes"
+    }
+  },
+  "criteria": {
+    "age": "Age",
+    "commitment": "Commitment",
+    "gender": "Gender",
+    "income": "Income",
+    "region": "Region",
+    "work": "Occupation"
+  },
+  "dialog": {
+    "confirm_dialog": {
+      "cancel": "No",
+      "confirm": "Yes",
+      "content": "Do you really want to perform this action ?",
+      "title": "Confirm"
+    },
+    "leave_dirty_form": {
+      "cancel": "Close",
+      "confirm": "Continue without saving",
+      "content": "Your changes will be lost if you do not proceed to the next step.<br /><br />In order to <strong>avoid losing your data</strong>, please click the button below before returning to the desired section.",
+      "title": "Attention !"
+    },
+    "upload_model": {
+      "content": "If you proceed with this action all candidates imported so far will be deleted."
+    }
+  },
+  "hint": {
+    "criteria_name": "Example : Gender",
+    "man": "Example : Female",
+    "man_acronym": "Example : F",
+    "max_allowed_chars": "Maximum {{ max }} Characters"
+  },
+  "menu": {
+    "faq": "FAQ",
+    "login": "Login",
+    "my_elections": "My Elections",
+    "new_election": "New Election",
+    "register": "Register"
+  },
+  "message": {
+    "conditions_are_not_met": "The conditions have not all been met for this criterion.",
+    "forgot_your_password": "Forgot Your Password ?"
+  },
+  "title": {
+    "add_criteria": "Add a Criterion",
+    "at_least_n_people": "At least <strong>{{ number }}</strong> people, <strong>{{ acronym }}</strong>",
+    "fair_election": "FairElection",
+    "help": "Help",
+    "login": "Login",
+    "name_or_candidate_number": "Name and/or number of the Candidate",
+    "register": "Register"
+  },
+  "toast": {
+    "candidates_successfully_imported": "Candidates successfully imported.",
+    "criteria_created": "Criterion successfully set.",
+    "criteria_edited": "Criterion successfully edited.",
+    "election_deleted": "Election successfully deleted.",
+    "reset_password_request_success": "Password reset request successfully submitted.",
+    "reset_password_success": "Password has been successfully changed.",
+    "user_account_created": "Account created successfully.",
+    "votes_successfully_imported": "Votes successfully imported.",
+    "welcome_home": "Welcome !",
+    "wrong_username_or_password": "Invalid username or password."
+  },
+  "validator": {
+    "count_min": "Please select at least {{ count }} items.",
+    "count_min_candidate": "Please add at least {{ count }} candidates.",
+    "field.email": "Please enter a valid email address",
+    "field.required": "This is a required field",
+    "field.too_long": "The maximum number of characters is {{ max }}",
+    "field.too_short": "The minimum number of characters is {{ min }}"
+  },
+  "word": {
+    "acronym": "Acronym",
+    "address": "Address",
+    "candidate_name": "Name or n° of the candidate",
+    "candidate_percent": "% of the candidates",
+    "category": "Category",
+    "category_name": "Name of Category",
+    "contact": "Contact",
+    "criteria": "Criteria",
+    "criteria_name": "Name of Criteria",
+    "de": "German",
+    "description": "Description",
+    "elected": "Elected ?",
+    "election_name": "Name of Election",
+    "email": "Email",
+    "en": "English",
+    "fr": "French",
+    "full_name": "Full Name",
+    "insufficient": "Insufficient",
+    "it": "Italian",
+    "many_person": "People",
+    "minimum_criterion": "Minimum Criterion",
+    "name": "Name",
+    "nobody": "Nobody",
+    "number": "Number",
+    "number_of_people_to_elect": "Number of people standing for election",
+    "one_person": "Person",
+    "password": "Password",
+    "pictogram": "Pictogram",
+    "sufficient": "Sufficient",
+    "total": "Total",
+    "votes": "Votes",
+    "you_have": "You have"
+  }
+}
