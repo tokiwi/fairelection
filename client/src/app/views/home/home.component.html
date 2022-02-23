@@ -26,7 +26,7 @@
 
     <div class="spacer-sm"></div>
 
-    <div class="d-flex flex-column flex-md-row justify-content-between align-items-start">
+    <div class="d-flex flex-column flex-md-row justify-content-between">
       <div class="how-it-works-step mx-2">
         <img src="assets/images/home/set-your-goals.svg" class="img-fluid my-4" alt="{{ 'component.home.title3' | translate }}">
         <h3>{{ 'component.home.title3' | translate }}</h3>
@@ -192,10 +192,8 @@
 
   <section id="try-fair-election">
     <div class="row">
-      <div class="col-md-7">
+      <div class="col-md-10 offset-md-1">
         <h2>{{ 'component.home.title15' | translate }}</h2>
-      </div>
-      <div class="col-md-5">
         <button mat-button class="btn btn-filled" routerLink="/elections/create">{{ 'action.try_fair_election' | translate }}</button>
       </div>
     </div>
