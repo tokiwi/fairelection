@@ -55,10 +55,6 @@
     img {
       height: 270px;
     }
-
-    .how-it-works-step {
-      width: 300px;
-    }
   }
 
   #benefits {
@@ -117,19 +113,15 @@
   }
 
   #try-fair-election {
-    .btn.mat-button {
-      padding: 32px 50px;
-      font-weight: 700;
-      font-size: 32px;
-      border-radius: 50px;
-    }
+    text-align: center;
   }
-}
 
-#partners {
-  margin: 0 50px;
+  #partners {
+    text-align: center;
 
-  .carousel-wrapper {
-    padding: 0 50px;
+    .carousel-wrapper {
+      margin: 0 50px;
+      padding: 0 50px;
+    }
   }
 }
