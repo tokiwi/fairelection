@@ -24,7 +24,7 @@
         <ng-container *ngIf="false === (loading$ | async)">
           <div class="table-responsive">
 
-            <drag-scroll class="criterias-slider" style="height: 100%;">
+            <div class="criterias-slider" style="height: 100%;">
               <table role="grid" class="w-100">
                 <thead>
                 <tr>
@@ -105,7 +105,7 @@
                 </tr>
                 </tfoot>
               </table>
-            </drag-scroll>
+            </div>
           </div>
 
           <div class="mt-3" *ngIf="form.get('candidates').hasError('count')">

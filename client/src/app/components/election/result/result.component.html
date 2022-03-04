@@ -22,7 +22,7 @@
     </div>
   </ng-container>
 
-  <drag-scroll class="criterias-slider" style="height: 100%;">
+  <div class="criterias-slider" style="height: 100%;">
     <table id="table-results" class="w-100s sticky-header ">
       <ng-container *ngFor="let resultResource of resultResources | slice:0:1; let index = index">
         <thead>
@@ -73,6 +73,6 @@
       </tr>
       </tfoot>
     </table>
-  </drag-scroll>
+  </div>
 
 </div>
