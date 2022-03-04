@@ -3,25 +3,25 @@
     "add_candidate": "KandidatIn hinzufügen",
     "add_category": "Kategorie hinzufügen",
     "add_criteria": "personalisierte Kriterien hinzufügen",
-    "add_election": "eine Wahl hinzufügen",
-    "back": "zurück",
-    "cancel": "abbrechen",
-    "create_election": "eine Wahl erschaffen",
-    "delete": "löschen",
+    "add_election": "Eine Wahl hinzufügen",
+    "back": "Zurück",
+    "cancel": "Abbrechen",
+    "create_election": "Eine Wahl erschaffen",
+    "delete": "Löschen",
     "download_model": "FairElection Model",
     "end_election": "Wahl beenden",
     "import_from_excel": "Eine Liste aus Excel importieren",
     "import_model": "Model importieren",
-    "login": "anmelden",
-    "logout": "abmelden",
+    "login": "Anmelden",
+    "logout": "Abmelden",
     "modify_candidates": "KandidatInnen ändern",
     "modify_criterias": "Kriterien ändern",
     "next_step": "nächster Schritt",
-    "previous_step": "vorheriger Schritt",
-    "recover": "wiederherstellen",
+    "previous_step": "Vorheriger Schritt",
+    "recover": "Wiederherstellen",
     "reduce_criteria": "Kriterien reduzieren",
-    "register": "registrieren",
-    "save": "speichern",
+    "register": "Registrieren",
+    "save": "Speichern",
     "see_results": "Resultate",
     "see_simulation": "Simulation ansehen",
     "start": "Start",
@@ -118,13 +118,13 @@
       "title1": "Aus einer Excel-Vorlage importieren"
     },
     "login": {
-      "title1": "anmelden"
+      "title1": "Anmelden"
     },
     "login_dialog": {
       "no_account_yet": "Sie haben noch kein Konto ?"
     },
     "register": {
-      "title1": "registrieren"
+      "title1": "Registrieren"
     },
     "reset_password": {
       "title1": "Neues Passwort"
