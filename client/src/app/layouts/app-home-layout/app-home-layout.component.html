@@ -6,12 +6,12 @@
   >
     <div class="d-flex flex-column h-100">
       <mat-toolbar class="my-4">
-        <img src="assets/images/logo.png" alt="FairElection" class="logo img-fluid" routerLink="/">
+        <img src="assets/images/logo.png" alt="FairElection" class="logo img-fluid" routerLink="/" (click)="drawer.close()">
       </mat-toolbar>
 
       <mat-action-list class="sidenav-main-menu h-100">
         <ng-container *ngFor="let item of this.menu">
-          <mat-list-item routerLinkActive="active" [routerLinkActiveOptions]="{exact: false}" [routerLink]="item.link">
+          <mat-list-item routerLinkActive="active" [routerLinkActiveOptions]="{exact: false}" [routerLink]="item.link" (click)="drawer.close()">
             <button>
               {{ item.label | translate}}
             </button>
@@ -19,12 +19,12 @@
         </ng-container>
 
         <ng-container *ngIf="false === (authService.isAuthenticated | async)">
-          <mat-list-item routerLinkActive="active" [routerLinkActiveOptions]="{exact: false}" routerLink="/login">
+          <mat-list-item routerLinkActive="active" [routerLinkActiveOptions]="{exact: false}" routerLink="/login" (click)="drawer.close()">
             <button>
               {{ 'menu.login' | translate }}
             </button>
           </mat-list-item>
-          <mat-list-item routerLinkActive="active" [routerLinkActiveOptions]="{exact: false}" routerLink="/register">
+          <mat-list-item routerLinkActive="active" [routerLinkActiveOptions]="{exact: false}" routerLink="/register" (click)="drawer.close()">
             <button>
               {{ 'menu.register' | translate }}
             </button>
