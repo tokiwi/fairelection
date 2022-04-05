@@ -134,7 +134,7 @@
     },
     "results": {
       "help.p1": "Vous trouverez ici la liste des candidat-es choisi-es. Elle respecte à la fois les critères choisis et le résultat de l’élection que vous avez organisée.",
-      "help.p2": "Les candidat-es non-choisi-es apparaissent en gris clair.  ",
+      "help.p2": "Les candidat-es non-choisi-es apparaissent en gris clair.",
       "help.title1": "Résultats",
       "p1": "Félicitations, cette élection est terminée. Vous pouvez la rejouer en modifiant les critères. Si l'utilisation de FairElection vous a plu, parlez-en autour de vous. Nous serions ravi-es d'entendre votre avis et vos propositions pour améliorer notre service. N'hésitez pas à <a href=\"mailto:info@fairelection.ch\">nous écrire</a> !",
       "title1": "Mission accomplie !",

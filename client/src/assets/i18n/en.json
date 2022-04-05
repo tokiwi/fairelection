@@ -133,8 +133,8 @@
       "title1": "Reset Password"
     },
     "results": {
-      "help.p1": "Help",
-      "help.p2": "Here you will find the list of the elected candidates. This list adheres to both the selected criteria and the results of the election. Unsuccessful candidates are displayed in light gray.",
+      "help.p1": "Here you will find the list of the elected candidates. This list adheres to both the selected criteria and the results of the election.",
+      "help.p2": "Unsuccessful candidates are displayed in light gray.",
       "help.title1": "Results",
       "p1": "Congratulations, the election is over. If you enjoyed using FairElection then please share it with your network. We welcome any feedback and suggestions on how to improve our service.  Please don't hesitate to <a href=\"mailto:info@fairelection.ch\"> reach out</a>!",
       "title1": "Mission Accomplished! ",

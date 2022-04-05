@@ -133,8 +133,8 @@
       "title1": "Passwort zurücksetzen"
     },
     "results": {
-      "help.p1": "Hilfe",
-      "help.p2": "Hier finden Sie die Liste der gewählten KandidatInnen. Diese Liste hält sowohl die gewählten Kriterien als auch das Ergebnis der Wahl ein. Nicht erfolgreiche KandidatInnen sind in hellgrau dargestellt..",
+      "help.p1": "Hier finden Sie die Liste der gewählten KandidatInnen. Diese Liste hält sowohl die gewählten Kriterien als auch das Ergebnis der Wahl ein.",
+      "help.p2": "Nicht erfolgreiche KandidatInnen sind in hellgrau dargestellt.",
       "help.title1": "Resultate",
       "p1": "Herzlichen Glückwunsch, die Wahl ist nun vorbei. Wenn Ihnen FairElection gefallen hat, teilen Sie dies mit Ihrem Umfeld. Wir würden uns freuen, Ihre Meinung und Ihre Vorschläge zur Verbesserung unseres Services zu hören.  Zögern Sie nicht <a href=\"mailto:info@fairelection.ch\">uns zu schreiben</a> !",
       "title1": "Mission erreicht ! ",
